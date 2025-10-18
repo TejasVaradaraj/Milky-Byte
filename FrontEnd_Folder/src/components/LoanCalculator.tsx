@@ -10,6 +10,7 @@ export function LoanCalculator() {
   const [downPayment, setDownPayment] = useState('7000');
   const [interestRate, setInterestRate] = useState('5.5');
   const [loanTerm, setLoanTerm] = useState('60');
+  const [creditScore, setCreditScore] = useState('700');
   const [monthlyPayment, setMonthlyPayment] = useState<number | null>(null);
   const [totalInterest, setTotalInterest] = useState<number | null>(null);
 
@@ -69,6 +70,18 @@ export function LoanCalculator() {
             value={interestRate}
             onChange={(e) => setInterestRate(e.target.value)}
             className="bg-white/20 border-purple-300/50 text-white"
+          />
+        </div>
+
+        <div>
+          <Label htmlFor="credit-score" className="text-purple-200">Credit Score</Label>
+          <Input
+            id="credit-score"
+            type="number"
+            value={creditScore}
+            onChange={(e) => setCreditScore(e.target.value)}
+            className="bg-white/20 border-purple-300/50 text-white"
+            placeholder="300-850"
           />
         </div>
 

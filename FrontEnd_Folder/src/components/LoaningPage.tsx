@@ -1,5 +1,4 @@
 import { LoanCalculator } from './LoanCalculator';
-import { SearchSection } from './SearchSection';
 import { Sparkles } from 'lucide-react';
 
 export function LoaningPage() {
@@ -35,16 +34,13 @@ export function LoaningPage() {
           </p>
         </div>
 
-        <style jsx>{`
+        <style>{`
           @keyframes twinkle {
             0%, 100% { opacity: 0.5; }
             50% { opacity: 1; }
           }
         `}</style>
       </div>
-
-      {/* Search Section */}
-      <SearchSection />
 
       {/* Calculator Section */}
       <div className="bg-gradient-to-b from-indigo-950 via-purple-950 to-indigo-950 py-20 relative overflow-hidden">

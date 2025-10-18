@@ -10,6 +10,7 @@ export function LeaseCalculator() {
   const [downPayment, setDownPayment] = useState('3000');
   const [leaseTerm, setLeaseTerm] = useState('36');
   const [residualValue, setResidualValue] = useState('55');
+  const [creditScore, setCreditScore] = useState('700');
   const [monthlyPayment, setMonthlyPayment] = useState<number | null>(null);
 
   const calculateLease = () => {
@@ -78,6 +79,18 @@ export function LeaseCalculator() {
             value={residualValue}
             onChange={(e) => setResidualValue(e.target.value)}
             className="bg-white/20 border-purple-300/50 text-white"
+          />
+        </div>
+
+        <div>
+          <Label htmlFor="lease-credit-score" className="text-purple-200">Credit Score</Label>
+          <Input
+            id="lease-credit-score"
+            type="number"
+            value={creditScore}
+            onChange={(e) => setCreditScore(e.target.value)}
+            className="bg-white/20 border-purple-300/50 text-white"
+            placeholder="300-850"
           />
         </div>
 

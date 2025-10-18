@@ -1,6 +1,7 @@
 import { HeroSection } from './HeroSection';
 import { ScrollingBar } from './ScrollingBar';
 import { ZodiacCarFinder } from './ZodiacCarFinder';
+import { SearchSection } from './SearchSection';
 
 export function HomePage() {
   return (
@@ -13,6 +14,9 @@ export function HomePage() {
 
       {/* Cosmic Car Match Section */}
       <ZodiacCarFinder />
+
+      {/* Search Section */}
+      <SearchSection />
 
       {/* Footer */}
       <footer className="bg-gradient-to-r from-indigo-950 via-purple-950 to-indigo-950 py-12 border-t border-purple-500/30">

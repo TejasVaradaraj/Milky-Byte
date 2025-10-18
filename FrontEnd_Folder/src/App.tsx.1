@@ -1,0 +1,191 @@
+import React, { useEffect, useState } from "react";
+
+// ========================
+// 🔗 BACKEND BASE URL
+// ========================
+const BASE_URL = "http://127.0.0.1:8000"; // change to deployed API if needed
+
+// ========================
+// 📘 INTERFACES
+// ========================
+interface Car {
+  year: number;
+  model: string;
+  price: number;
+  mpg_combined: number;
+  mileage?: number;
+  horsepower?: number;
+}
+
+interface LoanInfo {
+  apr_percent: number;
+  monthly_payment: number;
+  total_paid: number;
+  [key: string]: any;
+}
+
+// ========================
+// ⚛️ MAIN COMPONENT
+// ========================
+const App: React.FC = () => {
+  const [cars, setCars] = useState<Car[]>([]);
+  const [sortBy, setSortBy] = useState<string>("price");
+  const [creditScore, setCreditScore] = useState<number>(720);
+  const [loanInfo, setLoanInfo] = useState<LoanInfo | null>(null);
+  const [leaseInfo, setLeaseInfo] = useState<any | null>(null);
+  const [aprInfo, setAprInfo] = useState<any | null>(null);
+
+  // Load sorted cars
+  useEffect(() => {
+    fetch(`${BASE_URL}/cars?sort_by=${sortBy}&order=asc`)
+      .then((r) => r.json())
+      .then(setCars)
+      .catch(console.error);
+  }, [sortBy]);
+
+  // Load demo data for startup display
+  useEffect(() => {
+    fetch(`${BASE_URL}/demo`)
+      .then((r) => r.json())
+      .then((data) => {
+        setLoanInfo(data.loan);
+        setLeaseInfo(data.lease);
+        setAprInfo(data.apr);
+      })
+      .catch(console.error);
+  }, []);
+
+  // ========================
+  // 💰 Handlers
+  // ========================
+  const handleLoan = (car: Car | null) => {
+    const price = car?.price || 30000;
+    fetch(`${BASE_URL}/loan?price=${price}&credit_score=${creditScore}&months=60`)
+      .then((r) => r.json())
+      .then(setLoanInfo)
+      .catch(console.error);
+  };
+
+  const handleLease = (car: Car | null) => {
+    const price = car?.price || 30000;
+    fetch(`${BASE_URL}/lease?price=${price}&credit_score=${creditScore}&months=36`)
+      .then((r) => r.json())
+      .then(setLeaseInfo)
+      .catch(console.error);
+  };
+
+  const handleApr = (car: Car | null) => {
+    const price = car?.price || 30000;
+    fetch(`${BASE_URL}/apr?price=${price}&credit_score=${creditScore}&months=60`)
+      .then((r) => r.json())
+      .then(setAprInfo)
+      .catch(console.error);
+  };
+
+  // ========================
+  // 🖼️ UI RENDER
+  // ========================
+  return (
+    <div
+      className="p-6 font-sans text-white"
+      style={{ background: "#0B0C1A", minHeight: "100vh" }}
+    >
+      <h1 className="text-3xl font-bold mb-4">🚗 Celestial Toyota Selector</h1>
+
+      <label className="block mb-4">
+        Sort by:&nbsp;
+        <select
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value)}
+          className="text-black"
+        >
+          <option value="price">Price</option>
+          <option value="mpg_combined">MPG</option>
+          <option value="mileage">Mileage</option>
+          <option value="year">Year</option>
+          <option value="horsepower">Horsepower</option>
+        </select>
+      </label>
+
+      <div className="mb-4">
+        <label>Credit Score: </label>
+        <input
+          type="number"
+          value={creditScore}
+          onChange={(e) => setCreditScore(Number(e.target.value))}
+          className="text-black"
+        />
+      </div>
+
+      {/* CAR GRID */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {cars.map((car, idx) => (
+          <div
+            key={idx}
+            className="p-4 rounded-lg bg-[#15172B] border border-gray-700"
+          >
+            <h3 className="text-xl font-semibold">
+              {car.year} {car.model}
+            </h3>
+            <p>💵 ${car.price?.toLocaleString()}</p>
+            <p>⚙️ {car.horsepower ? `${car.horsepower} HP` : "—"}</p>
+            <p>⛽ MPG: {car.mpg_combined}</p>
+
+            <div className="mt-2 space-x-2">
+              <button
+                onClick={() => handleLoan(car)}
+                className="bg-blue-500 px-3 py-1 rounded"
+              >
+                Loan
+              </button>
+              <button
+                onClick={() => handleLease(car)}
+                className="bg-purple-500 px-3 py-1 rounded"
+              >
+                Lease
+              </button>
+              <button
+                onClick={() => handleApr(car)}
+                className="bg-green-500 px-3 py-1 rounded"
+              >
+                APR
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* RESULT PANELS */}
+      <div className="mt-6 p-4 bg-[#15172B] rounded-lg">
+        {loanInfo && (
+          <>
+            <h2 className="text-2xl font-bold mb-2">Loan Details</h2>
+            <pre className="bg-black/30 p-2 rounded text-sm overflow-x-auto">
+              {JSON.stringify(loanInfo, null, 2)}
+            </pre>
+          </>
+        )}
+
+        {leaseInfo && (
+          <>
+            <h2 className="text-2xl font-bold mt-4 mb-2">Lease Details</h2>
+            <pre className="bg-black/30 p-2 rounded text-sm overflow-x-auto">
+              {JSON.stringify(leaseInfo, null, 2)}
+            </pre>
+          </>
+        )}
+
+        {aprInfo && (
+          <>
+            <h2 className="text-2xl font-bold mt-4 mb-2">APR Breakdown</h2>
+            <pre className="bg-black/30 p-2 rounded text-sm overflow-x-auto">
+              {JSON.stringify(aprInfo, null, 2)}
+            </pre>
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default App;

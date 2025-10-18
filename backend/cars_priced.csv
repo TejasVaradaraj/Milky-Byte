@@ -1,0 +1,468 @@
+year,make,model,trim,mileage,mpg_city,mpg_hwy,mpg_combined,horsepower,body_type,fuel_type,price
+2015,Toyota,4Runner 2WD,Automatic (S5),119554,17,22,19,205,Standard Sport Utility Vehicle 2WD,Regular,10500
+2015,Toyota,4Runner 4WD,Automatic (S5),116131,17,21,18,194,Standard Sport Utility Vehicle 4WD,Regular,17100
+2015,Toyota,Avalon,Automatic (S6),116728,21,30,24,195,Midsize Cars,Regular,14100
+2015,Toyota,Avalon Hybrid,Automatic (AV-S6),117806,40,39,40,191,Midsize Cars,Regular,12500
+2015,Toyota,Camry,Automatic (S6),117835,25,34,28,152,Midsize Cars,Regular,13600
+2015,Toyota,Camry,Automatic (S6),115708,21,30,25,193,Midsize Cars,Regular,14800
+2015,Toyota,Camry Hybrid LE,Automatic (variable gear ratios),119571,42,38,40,164,Midsize Cars,Regular,11500
+2015,Toyota,Corolla,Automatic (AV-S7),116514,28,36,31,154,Midsize Cars,Regular,13600
+2015,Toyota,Corolla,Automatic (variable gear ratios),118993,29,37,32,154,Midsize Cars,Regular,10600
+2015,Toyota,Corolla,Automatic 4-spd,119530,27,35,30,182,Midsize Cars,Regular,17100
+2015,Toyota,Corolla,Manual 6-spd,117368,28,36,31,179,Midsize Cars,Regular,16000
+2015,Toyota,Corolla LE Eco,Automatic (variable gear ratios),115122,30,40,34,165,Midsize Cars,Regular,17000
+2015,Toyota,Corolla LE Eco,Automatic (variable gear ratios),116322,30,38,33,207,Midsize Cars,Regular,17600
+2015,Toyota,Highlander 2WD,Automatic (S6),116195,20,25,22,181,Small Sport Utility Vehicle 2WD,Regular,15400
+2015,Toyota,Highlander 2WD,Automatic (S6),116413,19,25,21,185,Small Sport Utility Vehicle 2WD,Regular,10600
+2015,Toyota,Highlander AWD,Automatic (S6),116070,18,24,20,170,Standard Sport Utility Vehicle 4WD,Regular,11800
+2015,Toyota,Land Cruiser Wagon 4WD,Automatic (S6),117434,13,18,15,167,Standard Sport Utility Vehicle 4WD,Regular,16500
+2015,Toyota,Prius,Automatic (variable gear ratios),119360,50,46,48,230,Midsize Cars,Regular,12600
+2015,Toyota,Prius c,Automatic (variable gear ratios),115802,53,46,50,174,Compact Cars,Regular,13900
+2015,Toyota,Prius v,Automatic (variable gear ratios),117749,43,39,41,188,Midsize Station Wagons,Regular,17800
+2015,Toyota,RAV4,Automatic (S6),117499,23,30,26,168,Small Sport Utility Vehicle 2WD,Regular,10500
+2015,Toyota,RAV4 AWD,Automatic (S6),118147,22,28,25,216,Small Sport Utility Vehicle 4WD,Regular,11700
+2015,Toyota,Sequoia 2WD,Automatic (S6),119088,13,18,15,171,Standard Sport Utility Vehicle 2WD,Regular,14400
+2015,Toyota,Sequoia 4WD,Automatic (S6),115367,13,17,14,217,Standard Sport Utility Vehicle 4WD,Regular,15800
+2015,Toyota,Sienna 2WD,Automatic (S6),116093,18,25,21,234,Minivan - 2WD,Regular,16300
+2015,Toyota,Sienna AWD,Automatic (S6),116781,16,23,19,251,Minivan - 4WD,Regular,16100
+2015,Toyota,Tacoma 2WD,Automatic 4-spd,117988,19,24,21,289,Small Pickup Trucks 2WD,Regular,16800
+2015,Toyota,Tacoma 2WD,Automatic 5-spd,115887,17,21,19,301,Small Pickup Trucks 2WD,Regular,25400
+2015,Toyota,Tacoma 2WD,Manual 5-spd,117273,21,25,22,253,Small Pickup Trucks 2WD,Regular,21100
+2015,Toyota,Tacoma 2WD,Manual 6-spd,117783,16,21,18,286,Small Pickup Trucks 2WD,Regular,22200
+2015,Toyota,Tacoma 4WD,Automatic 4-spd,117748,18,21,19,297,Small Pickup Trucks 4WD,Regular,20400
+2015,Toyota,Tacoma 4WD,Automatic 5-spd,118864,16,21,18,292,Small Pickup Trucks 4WD,Regular,21600
+2015,Toyota,Tacoma 4WD,Manual 5-spd,119540,18,20,19,233,Small Pickup Trucks 4WD,Regular,21800
+2015,Toyota,Tacoma 4WD,Manual 6-spd,117228,15,19,17,343,Small Pickup Trucks 4WD,Regular,16800
+2015,Toyota,Tundra 2WD,Automatic (S6),115561,15,19,17,329,Standard Pickup Trucks 2WD,Regular,13600
+2015,Toyota,Tundra 2WD,Automatic (S6),119681,13,18,15,329,Standard Pickup Trucks 2WD,Regular,25000
+2015,Toyota,Tundra 4WD,Automatic (S6),115709,14,18,16,324,Standard Pickup Trucks 4WD,Regular,21400
+2015,Toyota,Tundra 4WD,Automatic (S6),115862,13,17,15,297,Standard Pickup Trucks 4WD,Regular,15300
+2015,Toyota,Venza,Automatic (S6),118617,20,26,23,180,Small Sport Utility Vehicle 2WD,Regular,11100
+2015,Toyota,Venza,Automatic (S6),116842,19,26,21,153,Small Sport Utility Vehicle 2WD,Regular,16100
+2015,Toyota,Venza 4WD,Automatic (S6),119174,20,26,22,159,Small Sport Utility Vehicle 4WD,Regular,16600
+2015,Toyota,Venza 4WD,Automatic (S6),116210,18,25,21,212,Small Sport Utility Vehicle 4WD,Regular,11600
+2015,Toyota,Yaris,Automatic 4-spd,116498,30,35,32,153,Compact Cars,Regular,12000
+2015,Toyota,Yaris,Manual 5-spd,118228,30,36,33,164,Compact Cars,Regular,17800
+2016,Toyota,4Runner 2WD,Automatic (S5),107661,17,22,19,178,Standard Sport Utility Vehicle 2WD,Regular,11600
+2016,Toyota,4Runner 4WD,Automatic (S5),103147,17,21,18,184,Standard Sport Utility Vehicle 4WD,Regular,13300
+2016,Toyota,Avalon,Automatic (S6),105772,21,30,24,164,Midsize Cars,Regular,15100
+2016,Toyota,Avalon Hybrid,Automatic (AV-S6),103535,40,39,40,203,Midsize Cars,Regular,14400
+2016,Toyota,Camry,Automatic (S6),104611,25,34,28,222,Midsize Cars,Regular,11400
+2016,Toyota,Camry,Automatic (S6),104109,21,30,25,231,Midsize Cars,Regular,13200
+2016,Toyota,Camry Hybrid LE,Automatic (variable gear ratios),104201,42,38,40,183,Midsize Cars,Regular,15200
+2016,Toyota,Corolla,Automatic (AV-S7),107027,28,36,31,171,Midsize Cars,Regular,12400
+2016,Toyota,Corolla,Automatic (variable gear ratios),106181,29,37,32,212,Midsize Cars,Regular,12100
+2016,Toyota,Corolla,Automatic 4-spd,105667,27,35,30,204,Midsize Cars,Regular,12900
+2016,Toyota,Corolla,Manual 6-spd,105512,28,36,31,214,Midsize Cars,Regular,15400
+2016,Toyota,Corolla LE Eco,Automatic (variable gear ratios),107781,30,40,34,163,Midsize Cars,Regular,10700
+2016,Toyota,Corolla LE Eco,Automatic (variable gear ratios),105268,30,38,33,199,Midsize Cars,Regular,10200
+2016,Toyota,Highlander 2WD,Automatic (S6),107229,20,25,22,160,Small Sport Utility Vehicle 2WD,Regular,15200
+2016,Toyota,Highlander 2WD,Automatic (S6),104284,19,25,21,178,Small Sport Utility Vehicle 2WD,Regular,10800
+2016,Toyota,Highlander AWD,Automatic (S6),104585,18,24,20,199,Standard Sport Utility Vehicle 4WD,Regular,13700
+2016,Toyota,Land Cruiser Wagon 4WD,Automatic (S8),103388,13,18,15,220,Standard Sport Utility Vehicle 4WD,Regular,14600
+2016,Toyota,Mirai,Automatic (variable gear ratios),104277,67,67,67,168,Subcompact Cars,Hydrogen,16900
+2016,Toyota,Prius,Automatic (variable gear ratios),106167,54,50,52,187,Midsize Cars,Regular,14200
+2016,Toyota,Prius c,Automatic (variable gear ratios),103163,53,46,50,200,Compact Cars,Regular,17900
+2016,Toyota,Prius v,Automatic (variable gear ratios),105946,43,39,41,181,Midsize Station Wagons,Regular,14000
+2016,Toyota,RAV4,Automatic (S6),106371,23,29,25,226,Small Sport Utility Vehicle 2WD,Regular,15000
+2016,Toyota,RAV4 AWD,Automatic (S6),103473,22,28,25,177,Small Sport Utility Vehicle 4WD,Regular,10300
+2016,Toyota,Sequoia 2WD,Automatic (S6),106148,13,17,15,182,Standard Sport Utility Vehicle 2WD,Regular,17400
+2016,Toyota,Sequoia 4WD,Automatic (S6),107619,13,17,14,190,Standard Sport Utility Vehicle 4WD,Regular,16200
+2016,Toyota,Sienna 2WD,Automatic (S6),105653,18,25,21,248,Minivan - 2WD,Regular,14600
+2016,Toyota,Sienna AWD,Automatic (S6),104022,16,23,19,232,Minivan - 4WD,Regular,15500
+2016,Toyota,Tacoma 2WD,Automatic (S6),107053,19,23,21,286,Small Pickup Trucks 2WD,Regular,13500
+2016,Toyota,Tacoma 2WD,Automatic (S6),105686,19,24,21,353,Small Pickup Trucks 2WD,Regular,24200
+2016,Toyota,Tacoma 4WD,Automatic (S6),107351,19,22,20,270,Small Pickup Trucks 4WD,Regular,17500
+2016,Toyota,Tacoma 4WD,Automatic (S6),104568,18,23,20,244,Small Pickup Trucks 4WD,Regular,17200
+2016,Toyota,Tacoma 4WD,Manual 5-spd,105622,19,21,20,293,Small Pickup Trucks 4WD,Regular,22400
+2016,Toyota,Tacoma 4WD,Manual 6-spd,106350,17,21,19,319,Small Pickup Trucks 4WD,Regular,20300
+2016,Toyota,Tundra 2WD,Automatic (S6),106866,13,18,15,360,Standard Pickup Trucks 2WD,Regular,18100
+2016,Toyota,Tundra 2WD,Automatic (S6),105178,15,19,17,280,Standard Pickup Trucks 2WD,Regular,19000
+2016,Toyota,Tundra 2WD FFV,Automatic (S6),104651,13,18,15,333,Standard Pickup Trucks 2WD,Gasoline or E85,25400
+2016,Toyota,Yaris,Automatic 4-spd,103299,30,35,32,188,Compact Cars,Regular,10200
+2016,Toyota,Yaris,Manual 5-spd,105815,30,36,33,186,Compact Cars,Regular,14500
+2017,Toyota,4Runner 2WD,Automatic (S5),95197,17,21,18,191,Standard Sport Utility Vehicle 2WD,Regular,15000
+2017,Toyota,4Runner 4WD,Automatic (S5),91837,17,20,18,158,Standard Sport Utility Vehicle 4WD,Regular,19000
+2017,Toyota,86,Automatic (S6),92852,24,32,27,184,Minicompact Cars,Premium,11600
+2017,Toyota,86,Manual 6-spd,92499,21,28,24,243,Minicompact Cars,Premium,17300
+2017,Toyota,Avalon,Automatic (S6),95514,21,30,24,234,Midsize Cars,Regular,11600
+2017,Toyota,Avalon Hybrid,Automatic (AV-S6),94439,40,39,40,220,Midsize Cars,Regular,11400
+2017,Toyota,Corolla iM,Automatic (AV-S7),92161,28,36,31,224,Midsize Cars,Regular,17500
+2017,Toyota,Corolla iM,Manual 6-spd,91839,27,35,30,213,Midsize Cars,Regular,13700
+2017,Toyota,Camry,Automatic (S6),93824,21,30,24,196,Midsize Cars,Regular,17700
+2017,Toyota,Camry,Automatic (S6),91977,24,33,27,201,Midsize Cars,Regular,17400
+2017,Toyota,Camry Hybrid LE,Automatic (variable gear ratios),91792,42,38,40,164,Midsize Cars,Regular,16800
+2017,Toyota,Corolla,Automatic (AV-S7),94063,28,35,31,217,Midsize Cars,Regular,18500
+2017,Toyota,Corolla,Automatic (variable gear ratios),91510,28,36,32,203,Midsize Cars,Regular,19700
+2017,Toyota,Corolla,Manual 6-spd,94559,27,35,30,169,Midsize Cars,Regular,19200
+2017,Toyota,Highlander,Automatic (S6),94803,20,24,22,167,Small Sport Utility Vehicle 2WD,Regular,19100
+2017,Toyota,Highlander,Automatic (S8),92588,20,27,23,208,Small Sport Utility Vehicle 2WD,Regular,16100
+2017,Toyota,Highlander AWD,Automatic (S8),92817,20,26,22,215,Standard Sport Utility Vehicle 4WD,Regular,14900
+2017,Toyota,Highlander AWD,Automatic (S8),95302,19,26,22,166,Standard Sport Utility Vehicle 4WD,Regular,12800
+2017,Toyota,Land Cruiser Wagon 4WD,Automatic (S8),91837,13,18,15,153,Standard Sport Utility Vehicle 4WD,Regular,18300
+2017,Toyota,Mirai,Automatic (variable gear ratios),95001,67,67,67,172,Subcompact Cars,Hydrogen,18600
+2017,Toyota,Prius,Automatic (variable gear ratios),91976,54,50,52,167,Midsize Cars,Regular,15600
+2017,Toyota,Prius c,Automatic (variable gear ratios),95964,48,43,46,175,Compact Cars,Regular,18600
+2017,Toyota,Prius v,Automatic (variable gear ratios),92016,43,39,41,216,Midsize Station Wagons,Regular,12200
+2017,Toyota,RAV4,Automatic (S6),92066,23,29,25,221,Small Sport Utility Vehicle 2WD,Regular,17900
+2017,Toyota,RAV4 AWD,Automatic (S6),92099,22,28,25,227,Small Sport Utility Vehicle 4WD,Regular,15700
+2017,Toyota,Sequoia 2WD,Automatic (S6),92676,13,17,15,192,Standard Sport Utility Vehicle 2WD,Regular,17200
+2017,Toyota,Sequoia 4WD,Automatic (S6),93643,13,17,14,166,Standard Sport Utility Vehicle 4WD,Regular,18000
+2017,Toyota,Sienna 2WD,Automatic (S8),92475,19,27,22,238,Minivan - 2WD,Regular,19300
+2017,Toyota,Sienna AWD,Automatic (S8),94615,18,24,20,226,Minivan - 4WD,Regular,16200
+2017,Toyota,Tacoma 2WD,Automatic (S6),92097,19,24,21,256,Small Pickup Trucks 2WD,Regular,22200
+2017,Toyota,Tacoma 2WD,Automatic (S6),93222,19,23,21,357,Small Pickup Trucks 2WD,Regular,26000
+2017,Toyota,Tacoma 4WD,Automatic (S6),93706,18,23,20,250,Small Pickup Trucks 4WD,Regular,19700
+2017,Toyota,Tacoma 4WD,Automatic (S6),93472,19,22,20,326,Small Pickup Trucks 4WD,Regular,28000
+2017,Toyota,Tacoma 4WD,Manual 5-spd,93157,19,21,20,250,Small Pickup Trucks 4WD,Regular,23600
+2017,Toyota,Tacoma 4WD,Manual 6-spd,95814,17,21,18,339,Small Pickup Trucks 4WD,Regular,24700
+2017,Toyota,Tundra 2WD,Automatic (S6),95302,15,19,16,324,Standard Pickup Trucks 2WD,Regular,20300
+2017,Toyota,Tundra 2WD,Automatic (S6),94773,13,18,15,313,Standard Pickup Trucks 2WD,Regular,21700
+2017,Toyota,Tundra 2WD FFV,Automatic (S6),95428,13,18,15,315,Standard Pickup Trucks 2WD,Gasoline or E85,14500
+2017,Toyota,Yaris,Automatic 4-spd,93802,30,35,32,205,Compact Cars,Regular,14700
+2017,Toyota,Yaris,Manual 5-spd,92658,30,36,33,179,Compact Cars,Regular,19900
+2017,Toyota,Yaris iA,Automatic (S6),92728,32,40,35,232,Subcompact Cars,Regular,12900
+2017,Toyota,Yaris iA,Manual 6-spd,93645,30,39,34,175,Subcompact Cars,Regular,20000
+2018,Toyota,4Runner 2WD,Automatic (S5),79725,17,21,18,167,Standard Sport Utility Vehicle 2WD,Regular,20100
+2018,Toyota,4Runner 4WD,Automatic (S5),81174,17,20,18,216,Standard Sport Utility Vehicle 4WD,Regular,19200
+2018,Toyota,86,Automatic (S6),83605,24,32,27,236,Minicompact Cars,Premium,17700
+2018,Toyota,86,Manual 6-spd,80176,21,28,24,228,Minicompact Cars,Premium,18700
+2018,Toyota,Avalon,Automatic (S6),81127,21,30,24,197,Midsize Cars,Regular,16700
+2018,Toyota,Avalon Hybrid,Automatic (AV-S6),80827,40,39,40,221,Midsize Cars,Regular,18700
+2018,Toyota,C-HR,Automatic (AV-S7),81174,27,31,29,200,Compact Cars,Regular,15000
+2018,Toyota,Corolla iM,Automatic (AV-S7),81233,28,36,31,221,Midsize Cars,Regular,15400
+2018,Toyota,Corolla iM,Manual 6-spd,83548,27,35,30,221,Midsize Cars,Regular,13500
+2018,Toyota,Camry,Automatic (S8),81204,29,41,34,230,Midsize Cars,Regular,13600
+2018,Toyota,Camry,Automatic (S8),80026,22,33,26,185,Midsize Cars,Regular,19400
+2018,Toyota,Camry Hybrid LE,Automatic (AV-S6),82481,51,53,52,233,Midsize Cars,Regular,15000
+2018,Toyota,Corolla,Automatic (AV-S7),80986,28,35,31,196,Midsize Cars,Regular,16100
+2018,Toyota,Corolla,Automatic (variable gear ratios),83846,28,36,32,193,Midsize Cars,Regular,21200
+2018,Toyota,Corolla,Manual 6-spd,82263,27,35,30,178,Midsize Cars,Regular,21600
+2018,Toyota,Highlander,Automatic (S6),81817,20,24,22,159,Small Sport Utility Vehicle 2WD,Regular,20300
+2018,Toyota,Highlander,Automatic (S8),79087,20,27,23,231,Small Sport Utility Vehicle 2WD,Regular,17600
+2018,Toyota,Highlander AWD,Automatic (S8),82928,19,26,22,189,Standard Sport Utility Vehicle 4WD,Regular,21100
+2018,Toyota,Highlander AWD,Automatic (S8),82618,20,26,22,181,Standard Sport Utility Vehicle 4WD,Regular,20700
+2018,Toyota,Land Cruiser Wagon 4WD,Automatic (S8),81958,13,18,15,155,Standard Sport Utility Vehicle 4WD,Regular,15400
+2018,Toyota,Mirai,Automatic (variable gear ratios),79037,67,67,67,212,Subcompact Cars,Hydrogen,18600
+2018,Toyota,Prius,Automatic (variable gear ratios),79733,54,50,52,175,Midsize Cars,Regular,21100
+2018,Toyota,Prius c,Automatic (variable gear ratios),83827,48,43,46,214,Compact Cars,Regular,16500
+2018,Toyota,RAV4,Automatic (S6),82831,23,29,25,226,Small Sport Utility Vehicle 2WD,Regular,12400
+2018,Toyota,RAV4 AWD,Automatic (S6),79892,22,28,25,204,Small Sport Utility Vehicle 4WD,Regular,13500
+2018,Toyota,Sequoia 2WD,Automatic (S6),83709,13,17,15,233,Standard Sport Utility Vehicle 2WD,Regular,13200
+2018,Toyota,Sequoia 4WD,Automatic (S6),79722,13,17,14,194,Standard Sport Utility Vehicle 4WD,Regular,17200
+2018,Toyota,Sienna 2WD,Automatic (S8),82594,19,27,22,255,Minivan - 2WD,Regular,23500
+2018,Toyota,Sienna AWD,Automatic (S8),79412,18,24,20,275,Minivan - 4WD,Regular,20100
+2018,Toyota,Tacoma 2WD,Automatic (S6),82533,19,24,21,358,Small Pickup Trucks 2WD,Regular,21800
+2018,Toyota,Tacoma 2WD,Automatic (S6),81829,20,23,21,258,Small Pickup Trucks 2WD,Regular,24000
+2018,Toyota,Tacoma 4WD,Automatic (S6),80691,18,22,20,270,Small Pickup Trucks 4WD,Regular,21700
+2018,Toyota,Tacoma 4WD,Automatic (S6),83369,19,22,20,344,Small Pickup Trucks 4WD,Regular,16300
+2018,Toyota,Tacoma 4WD,Manual 6-spd,81215,17,21,18,344,Small Pickup Trucks 4WD,Regular,24000
+2018,Toyota,Tundra 2WD,Automatic (S6),81475,15,19,16,273,Standard Pickup Trucks 2WD,Regular,30800
+2018,Toyota,Tundra 2WD,Automatic (S6),80081,13,18,15,316,Standard Pickup Trucks 2WD,Regular,16800
+2018,Toyota,Tundra 4WD,Automatic (S6),79020,14,18,16,325,Standard Pickup Trucks 4WD,Regular,19000
+2018,Toyota,Tundra 4WD,Automatic (S6),80679,13,17,14,331,Standard Pickup Trucks 4WD,Regular,26000
+2018,Toyota,Yaris,Automatic 4-spd,81955,30,35,32,177,Compact Cars,Regular,17300
+2018,Toyota,Yaris,Manual 5-spd,81969,30,36,33,214,Compact Cars,Regular,15500
+2018,Toyota,Yaris iA,Automatic (S6),81911,32,40,35,202,Subcompact Cars,Regular,15400
+2018,Toyota,Yaris iA,Manual 6-spd,79930,30,39,34,218,Subcompact Cars,Regular,19200
+2019,Toyota,4Runner 2WD,Automatic (S5),70394,17,21,18,202,Standard Sport Utility Vehicle 2WD,Regular,19700
+2019,Toyota,4Runner 4WD,Automatic (S5),71166,17,20,18,172,Standard Sport Utility Vehicle 4WD,Regular,14800
+2019,Toyota,86,Automatic (S6),70329,24,32,27,184,Minicompact Cars,Premium,14900
+2019,Toyota,86,Manual 6-spd,71887,21,28,24,238,Minicompact Cars,Premium,18000
+2019,Toyota,Avalon,Automatic (S8),71470,22,31,25,190,Midsize Cars,Regular,14500
+2019,Toyota,Avalon Hybrid,Automatic (AV-S6),71550,43,43,43,163,Midsize Cars,Regular,15300
+2019,Toyota,C-HR,Automatic (AV-S7),68143,27,31,29,246,Compact Cars,Regular,23500
+2019,Toyota,Camry,Automatic (S8),68389,22,33,26,236,Midsize Cars,Regular,21700
+2019,Toyota,Camry,Automatic (S8),68517,29,41,34,219,Midsize Cars,Regular,23400
+2019,Toyota,Camry Hybrid LE,Automatic (AV-S6),69691,51,53,52,157,Midsize Cars,Regular,23500
+2019,Toyota,Corolla,Automatic (AV-S7),68415,28,35,31,196,Midsize Cars,Regular,17600
+2019,Toyota,Corolla,Automatic (variable gear ratios),71194,28,36,32,200,Midsize Cars,Regular,20100
+2019,Toyota,Corolla,Manual 6-spd,67497,27,35,30,188,Midsize Cars,Regular,24100
+2019,Toyota,Corolla Hatchback,Automatic (AV-S10),69495,32,42,36,180,Compact Cars,Regular,14500
+2019,Toyota,Corolla Hatchback,Manual 6-spd,67310,28,37,31,206,Compact Cars,Regular,15300
+2019,Toyota,Highlander,Automatic (S6),71239,20,24,22,238,Small Sport Utility Vehicle 2WD,Regular,15200
+2019,Toyota,Highlander,Automatic (S8),69514,20,27,23,184,Small Sport Utility Vehicle 2WD,Regular,15500
+2019,Toyota,Highlander AWD,Automatic (S8),68519,19,26,22,180,Standard Sport Utility Vehicle 4WD,Regular,17900
+2019,Toyota,Highlander AWD,Automatic (S8),69522,20,26,22,216,Standard Sport Utility Vehicle 4WD,Regular,13700
+2019,Toyota,Land Cruiser Wagon 4WD,Automatic (S8),69770,13,18,15,197,Standard Sport Utility Vehicle 4WD,Regular,19500
+2019,Toyota,Mirai,Automatic (variable gear ratios),71169,67,67,67,210,Subcompact Cars,Hydrogen,23800
+2019,Toyota,Prius,Automatic (variable gear ratios),70095,54,50,52,199,Midsize Cars,Regular,19400
+2019,Toyota,Prius AWD,Automatic (variable gear ratios),70807,52,48,50,189,Midsize Cars,Regular,17400
+2019,Toyota,Prius c,Automatic (variable gear ratios),70493,48,43,46,238,Compact Cars,Regular,18900
+2019,Toyota,RAV4,Automatic (S8),68582,26,35,30,233,Small Sport Utility Vehicle 2WD,Regular,15900
+2019,Toyota,RAV4 AWD,Automatic (S8),68849,25,33,28,233,Small Sport Utility Vehicle 4WD,Regular,21900
+2019,Toyota,RAV4 AWD,Automatic (S8),68965,27,34,30,195,Small Sport Utility Vehicle 4WD,Regular,17300
+2019,Toyota,Sequoia 2WD,Automatic (S6),70191,13,17,15,208,Standard Sport Utility Vehicle 2WD,Regular,15100
+2019,Toyota,Sequoia 4WD,Automatic (S6),67202,13,17,14,210,Standard Sport Utility Vehicle 4WD,Regular,15700
+2019,Toyota,Sienna 2WD,Automatic (S8),71562,19,27,22,229,Minivan - 2WD,Regular,26500
+2019,Toyota,Sienna AWD,Automatic (S8),70288,18,24,20,264,Minivan - 4WD,Regular,25600
+2019,Toyota,Tacoma 2WD,Automatic (S6),71410,19,24,21,341,Small Pickup Trucks 2WD,Regular,20100
+2019,Toyota,Tacoma 2WD,Automatic (S6),70306,20,23,21,264,Small Pickup Trucks 2WD,Regular,24100
+2019,Toyota,Tacoma 4WD,Automatic (S6),67191,18,22,20,283,Small Pickup Trucks 4WD,Regular,23800
+2019,Toyota,Tacoma 4WD,Automatic (S6),70169,19,22,20,318,Small Pickup Trucks 4WD,Regular,21700
+2019,Toyota,Tacoma 4WD,Manual 6-spd,67458,17,21,18,301,Small Pickup Trucks 4WD,Regular,34200
+2019,Toyota,Tundra 2WD,Automatic (S6),69525,15,19,16,246,Standard Pickup Trucks 2WD,Regular,34700
+2019,Toyota,Tundra 2WD,Automatic (S6),68502,13,18,15,296,Standard Pickup Trucks 2WD,Regular,33700
+2019,Toyota,Tundra 4WD,Automatic (S6),69713,14,18,16,298,Standard Pickup Trucks 4WD,Regular,33800
+2019,Toyota,Tundra 4WD,Automatic (S6),70671,13,17,14,284,Standard Pickup Trucks 4WD,Regular,24400
+2019,Toyota,Yaris,Automatic (S6),68179,32,40,35,167,Compact Cars,Regular,19700
+2019,Toyota,Yaris,Automatic 4-spd,67155,30,35,32,223,Compact Cars,Regular,23100
+2019,Toyota,Yaris,Manual 6-spd,70683,30,39,34,195,Compact Cars,Regular,22400
+2020,Toyota,4Runner 2WD,Automatic (S5),56107,16,19,17,192,Standard Sport Utility Vehicle 2WD,Regular,23200
+2020,Toyota,4Runner 4WD,Automatic (S5),58695,16,19,17,220,Standard Sport Utility Vehicle 4WD,Regular,23600
+2020,Toyota,86,Automatic (S6),56416,24,32,27,203,Minicompact Cars,Premium,18800
+2020,Toyota,86,Manual 6-spd,56055,21,28,24,167,Minicompact Cars,Premium,21600
+2020,Toyota,Avalon,Automatic (S8),57754,22,31,25,173,Midsize Cars,Regular,22700
+2020,Toyota,Avalon Hybrid,Automatic (AV-S6),56316,43,43,43,246,Midsize Cars,Regular,23100
+2020,Toyota,C-HR,Automatic (AV-S7),58639,27,31,29,195,Compact Cars,Regular,22300
+2020,Toyota,Camry,Automatic (S8),59604,22,33,26,173,Midsize Cars,Regular,24600
+2020,Toyota,Camry,Automatic (S8),59519,29,41,34,206,Midsize Cars,Regular,16000
+2020,Toyota,Camry AWD LE/SE,Automatic (S8),57765,25,34,29,204,Midsize Cars,Regular,22100
+2020,Toyota,Corolla,Automatic (AV-S10),55487,31,40,34,209,Compact Cars,Regular,17800
+2020,Toyota,Corolla,Automatic (variable gear ratios),59363,30,38,33,206,Compact Cars,Regular,21700
+2020,Toyota,Corolla,Manual 6-spd,57722,29,36,32,187,Compact Cars,Regular,26600
+2020,Toyota,Corolla,Manual 6-spd,56480,29,39,33,206,Compact Cars,Regular,25100
+2020,Toyota,Corolla Hatchback,Automatic (AV-S10),58989,32,41,35,204,Compact Cars,Regular,17600
+2020,Toyota,Corolla Hatchback,Manual 6-spd,56392,28,37,31,193,Compact Cars,Regular,17400
+2020,Toyota,Highlander,Automatic (S8),58471,20,28,23,164,Small Sport Utility Vehicle 2WD,Regular,20600
+2020,Toyota,Highlander,Automatic (S8),55957,21,29,24,225,Small Sport Utility Vehicle 2WD,Regular,20800
+2020,Toyota,Highlander AWD,Automatic (S8),57104,20,27,23,199,Small Sport Utility Vehicle 4WD,Regular,23000
+2020,Toyota,Land Cruiser Wagon 4WD,Automatic (S8),57266,13,17,14,184,Standard Sport Utility Vehicle 4WD,Regular,19700
+2020,Toyota,Mirai,Automatic (variable gear ratios),59117,67,67,67,217,Subcompact Cars,Hydrogen,22700
+2020,Toyota,Prius,Automatic (variable gear ratios),57684,54,50,52,193,Midsize Cars,Regular,24700
+2020,Toyota,Prius AWD,Automatic (variable gear ratios),55717,52,48,50,182,Midsize Cars,Regular,17700
+2020,Toyota,Prius c,Automatic (variable gear ratios),59903,48,43,46,218,Compact Cars,Regular,18900
+2020,Toyota,RAV4,Automatic (S8),56208,27,35,30,176,Small Sport Utility Vehicle 2WD,Regular,17800
+2020,Toyota,RAV4,Automatic (S8),57537,28,35,30,165,Small Sport Utility Vehicle 2WD,Regular,19000
+2020,Toyota,RAV4 AWD,Automatic (S8),56403,25,33,28,235,Small Sport Utility Vehicle 4WD,Regular,25500
+2020,Toyota,RAV4 AWD,Automatic (S8),56684,27,33,29,223,Small Sport Utility Vehicle 4WD,Regular,17500
+2020,Toyota,Sequoia 2WD,Automatic (S6),57840,13,17,15,171,Standard Sport Utility Vehicle 2WD,Regular,25500
+2020,Toyota,Sequoia 4WD,Automatic (S6),58457,13,17,14,221,Standard Sport Utility Vehicle 4WD,Regular,19200
+2020,Toyota,Sienna 2WD,Automatic (S8),56864,19,26,21,288,Minivan - 2WD,Regular,22100
+2020,Toyota,Sienna AWD,Automatic (S8),59299,18,24,20,287,Minivan - 4WD,Regular,24300
+2020,Toyota,GR Supra,Automatic (S8),57080,24,31,26,211,Two Seaters,Premium,21300
+2020,Toyota,Tacoma 2WD,Automatic (S6),59527,19,24,21,326,Small Pickup Trucks 2WD,Regular,31200
+2020,Toyota,Tacoma 2WD,Automatic (S6),56751,20,23,21,347,Small Pickup Trucks 2WD,Regular,38800
+2020,Toyota,Tacoma 4WD,Automatic (S6),56857,18,22,20,300,Small Pickup Trucks 4WD,Regular,28700
+2020,Toyota,Tacoma 4WD,Automatic (S6),59578,19,22,20,285,Small Pickup Trucks 4WD,Regular,30400
+2020,Toyota,Tacoma 4WD,Manual 6-spd,56213,17,21,18,345,Small Pickup Trucks 4WD,Regular,21400
+2020,Toyota,Tundra 2WD,Automatic (S6),57921,13,18,15,283,Standard Pickup Trucks 2WD,Regular,34200
+2020,Toyota,Tundra 4WD,Automatic (S6),56066,13,17,14,275,Standard Pickup Trucks 4WD,Regular,24300
+2020,Toyota,Yaris,Automatic (S6),59792,32,40,35,161,Compact Cars,Regular,21400
+2020,Toyota,Yaris,Manual 6-spd,59103,30,39,34,236,Compact Cars,Regular,21800
+2021,Toyota,4Runner 2WD,Automatic (S5),45531,16,19,17,229,Standard Sport Utility Vehicle 2WD,Regular,24900
+2021,Toyota,4Runner 4WD,Automatic (S5),47059,16,19,17,216,Standard Sport Utility Vehicle 4WD,Regular,16700
+2021,Toyota,Avalon,Automatic (S8),46351,22,31,25,202,Midsize Cars,Regular,28900
+2021,Toyota,Avalon AWD,Automatic (S8),44698,25,34,28,211,Midsize Cars,Regular,21300
+2021,Toyota,C-HR,Automatic (AV-S7),47278,27,31,29,208,Compact Cars,Regular,26500
+2021,Toyota,Camry,Automatic (S8),44612,22,33,26,187,Midsize Cars,Regular,22200
+2021,Toyota,Camry AWD LE/SE,Automatic (S8),47483,25,34,29,190,Midsize Cars,Regular,22900
+2021,Toyota,Corolla,Automatic (AV-S10),47125,31,40,34,190,Compact Cars,Regular,20500
+2021,Toyota,Corolla,Automatic (variable gear ratios),45062,30,38,33,207,Compact Cars,Regular,18000
+2021,Toyota,Corolla,Manual 6-spd,44033,29,39,33,198,Compact Cars,Regular,21100
+2021,Toyota,Corolla,Manual 6-spd,47148,29,36,32,209,Compact Cars,Regular,24900
+2021,Toyota,Corolla APEX,Automatic (AV-S10),46501,31,38,34,200,Compact Cars,Regular,26300
+2021,Toyota,Corolla APEX,Manual 6-spd,43375,28,36,31,223,Compact Cars,Regular,20400
+2021,Toyota,Highlander,Automatic (S8),43052,20,28,23,231,Small Sport Utility Vehicle 2WD,Regular,22500
+2021,Toyota,Highlander,Automatic (S8),45095,21,29,24,176,Small Sport Utility Vehicle 2WD,Regular,16800
+2021,Toyota,Highlander AWD,Automatic (S8),45765,20,27,23,220,Small Sport Utility Vehicle 4WD,Regular,20500
+2021,Toyota,Land Cruiser Wagon 4WD,Automatic (S8),46266,13,17,14,199,Standard Sport Utility Vehicle 4WD,Regular,19100
+2021,Toyota,Mirai Limited,Automatic (variable gear ratios),44938,67,64,65,179,Compact Cars,Hydrogen,23300
+2021,Toyota,Mirai XLE,Automatic (variable gear ratios),45046,76,71,74,212,Compact Cars,Hydrogen,21700
+2021,Toyota,Prius,Automatic (variable gear ratios),46527,54,50,52,211,Midsize Cars,Regular,17500
+2021,Toyota,Prius AWD,Automatic (variable gear ratios),47886,51,47,49,174,Midsize Cars,Regular,26800
+2021,Toyota,RAV4,Automatic (S8),47243,27,35,30,241,Small Sport Utility Vehicle 2WD,Regular,19900
+2021,Toyota,RAV4,Automatic (S8),43208,28,35,30,232,Small Sport Utility Vehicle 2WD,Regular,17200
+2021,Toyota,RAV4 AWD,Automatic (S8),45910,27,33,29,185,Small Sport Utility Vehicle 4WD,Regular,23800
+2021,Toyota,RAV4 AWD,Automatic (S8),45589,25,33,28,207,Small Sport Utility Vehicle 4WD,Regular,26000
+2021,Toyota,Sequoia 2WD,Automatic (S6),45665,13,17,15,226,Standard Sport Utility Vehicle 2WD,Regular,28900
+2021,Toyota,Sequoia 4WD,Automatic (S6),44087,13,17,14,190,Standard Sport Utility Vehicle 4WD,Regular,29400
+2021,Toyota,Sienna Hybrid 2WD,Automatic (AV-S6),47676,36,36,36,258,Minivan - 2WD,Regular,25900
+2021,Toyota,Sienna Hybrid AWD,Automatic (AV-S6),47587,35,36,35,257,Minivan - 4WD,Regular,32300
+2021,Toyota,GR Supra,Automatic (S8),46621,22,30,25,236,Two Seaters,Premium,25800
+2021,Toyota,GR Supra,Automatic (S8),45567,25,32,28,195,Two Seaters,Premium,23200
+2021,Toyota,Tacoma 2WD,Automatic (S6),44645,19,24,21,300,Small Pickup Trucks 2WD,Regular,30000
+2021,Toyota,Tacoma 2WD,Automatic (S6),45547,20,23,21,285,Small Pickup Trucks 2WD,Regular,22400
+2021,Toyota,Tacoma 4WD,Automatic (S6),45795,18,22,20,282,Small Pickup Trucks 4WD,Regular,42100
+2021,Toyota,Tacoma 4WD,Automatic (S6),43311,19,22,20,325,Small Pickup Trucks 4WD,Regular,29300
+2021,Toyota,Tacoma 4WD,Manual 6-spd,47195,17,21,18,245,Small Pickup Trucks 4WD,Regular,36200
+2021,Toyota,Tundra 2WD,Automatic (S6),45142,13,17,15,312,Standard Pickup Trucks 2WD,Regular,24000
+2021,Toyota,Tundra 4WD,Automatic (S6),45289,13,17,14,304,Standard Pickup Trucks 4WD,Regular,23000
+2021,Toyota,Venza AWD,Automatic (AV-S6),45633,40,37,39,220,Small Sport Utility Vehicle 4WD,Regular,18000
+2022,Toyota,4Runner 2WD,Automatic (S5),31963,16,19,17,228,Standard Sport Utility Vehicle 2WD,Regular,21300
+2022,Toyota,4Runner 4WD,Automatic (S5),34666,16,19,17,180,Standard Sport Utility Vehicle 4WD,Regular,18000
+2022,Toyota,Avalon,Automatic (S8),31232,22,31,25,216,Midsize Cars,Regular,29400
+2022,Toyota,Avalon Hybrid,Automatic (AV-S6),34343,43,43,43,176,Midsize Cars,Regular,19400
+2022,Toyota,C-HR,Automatic (AV-S7),33275,27,31,29,221,Compact Cars,Regular,27800
+2022,Toyota,Camry,Automatic (S8),33397,22,33,26,193,Midsize Cars,Regular,26600
+2022,Toyota,Camry AWD LE/SE,Automatic (S8),31752,25,34,29,158,Midsize Cars,Regular,22100
+2022,Toyota,Corolla,Automatic (AV-S10),33806,31,40,34,242,Compact Cars,Regular,20900
+2022,Toyota,Corolla,Automatic (variable gear ratios),34578,30,38,33,206,Compact Cars,Regular,21000
+2022,Toyota,Corolla,Manual 6-spd,35892,29,36,32,182,Compact Cars,Regular,23000
+2022,Toyota,Corolla,Manual 6-spd,34182,29,39,33,237,Compact Cars,Regular,20200
+2022,Toyota,Corolla APEX,Automatic (AV-S10),31869,31,38,34,202,Compact Cars,Regular,30000
+2022,Toyota,Corolla APEX,Manual 6-spd,35951,28,36,31,206,Compact Cars,Regular,24700
+2022,Toyota,Corolla Cross,Automatic (AV-S10),31520,31,33,32,235,Small Sport Utility Vehicle 2WD,Regular,19900
+2022,Toyota,Corolla Cross 4WD,Automatic (AV-S10),33286,29,32,30,182,Small Sport Utility Vehicle 4WD,Regular,17900
+2022,Toyota,GR 86,Automatic (S6),35299,21,31,25,196,Minicompact Cars,Premium,22000
+2022,Toyota,GR 86,Manual 6-spd,34490,20,27,22,247,Minicompact Cars,Premium,27900
+2022,Toyota,Highlander,Automatic (S8),33230,20,28,23,183,Small Sport Utility Vehicle 2WD,Regular,23700
+2022,Toyota,Highlander,Automatic (S8),34422,21,29,24,196,Small Sport Utility Vehicle 2WD,Regular,31900
+2022,Toyota,Highlander AWD,Automatic (S8),35458,20,27,23,180,Small Sport Utility Vehicle 4WD,Regular,27300
+2022,Toyota,Mirai LE,Automatic (variable gear ratios),32671,76,71,74,211,Compact Cars,Hydrogen,23700
+2022,Toyota,Mirai Limited,Automatic (variable gear ratios),32639,67,64,65,235,Compact Cars,Hydrogen,20000
+2022,Toyota,Prius,Automatic (variable gear ratios),35406,54,50,52,216,Midsize Cars,Regular,20100
+2022,Toyota,Prius AWD,Automatic (variable gear ratios),34594,51,47,49,236,Midsize Cars,Regular,24400
+2022,Toyota,RAV4,Automatic (S8),34781,27,35,30,174,Small Sport Utility Vehicle 2WD,Regular,24800
+2022,Toyota,RAV4 AWD,Automatic (S8),32703,25,33,28,192,Small Sport Utility Vehicle 4WD,Regular,19700
+2022,Toyota,RAV4 AWD,Automatic (S8),32349,27,33,29,219,Small Sport Utility Vehicle 4WD,Regular,31300
+2022,Toyota,Sequoia 2WD,Automatic (S6),32366,13,17,15,198,Standard Sport Utility Vehicle 2WD,Regular,17800
+2022,Toyota,Sequoia 4WD,Automatic (S6),31307,13,17,14,200,Standard Sport Utility Vehicle 4WD,Regular,18300
+2022,Toyota,Sienna 2WD,Automatic (AV-S6),32157,36,36,36,279,Minivan - 2WD,Regular,35200
+2022,Toyota,Sienna AWD,Automatic (AV-S6),34397,35,36,35,289,Minivan - 4WD,Regular,35100
+2022,Toyota,GR Supra,Automatic (S8),35462,25,32,28,190,Two Seaters,Premium,24200
+2022,Toyota,GR Supra,Automatic (S8),32927,22,30,25,169,Two Seaters,Premium,20800
+2022,Toyota,Tacoma 2WD,Automatic (S6),31420,19,24,21,280,Small Pickup Trucks 2WD,Regular,39500
+2022,Toyota,Tacoma 2WD,Automatic (S6),31125,20,23,21,351,Small Pickup Trucks 2WD,Regular,35500
+2022,Toyota,Tacoma 4WD,Automatic (S6),34849,18,22,20,309,Small Pickup Trucks 4WD,Regular,29500
+2022,Toyota,Tacoma 4WD,Automatic (S6),34818,19,22,20,316,Small Pickup Trucks 4WD,Regular,28500
+2022,Toyota,Tacoma 4WD,Manual 6-spd,35813,17,21,18,300,Small Pickup Trucks 4WD,Regular,26900
+2022,Toyota,Tundra 2WD,Automatic (S10),35294,18,23,20,294,Standard Pickup Trucks 2WD,Regular,44900
+2022,Toyota,Tundra 2WD,Automatic (S10),33226,18,24,20,318,Standard Pickup Trucks 2WD,Regular,38800
+2022,Toyota,Tundra 2WD,Automatic (S10),33266,20,24,22,374,Standard Pickup Trucks 2WD,Regular,43400
+2022,Toyota,Tundra 4WD,Automatic (S10),34146,17,22,19,349,Standard Pickup Trucks 4WD,Regular,43400
+2022,Toyota,Tundra 4WD,Automatic (S10),34451,17,23,19,267,Standard Pickup Trucks 4WD,Regular,38200
+2022,Toyota,Tundra 4WD,Automatic (S10),31852,19,22,20,332,Standard Pickup Trucks 4WD,Regular,31300
+2022,Toyota,Venza AWD,Automatic (AV-S6),33700,40,37,39,168,Small Sport Utility Vehicle 4WD,Regular,19300
+2023,Toyota,4Runner 2WD,Automatic (S5),19959,16,19,17,199,Standard Sport Utility Vehicle 2WD,Regular,20300
+2023,Toyota,4Runner 4WD,Automatic (S5),19184,16,19,17,224,Standard Sport Utility Vehicle 4WD,Regular,23200
+2023,Toyota,bZ4X,Automatic (A1),22415,131,107,119,132,Small Sport Utility Vehicle 2WD,Electricity,23600
+2023,Toyota,Camry,Automatic (S8),22987,22,33,26,208,Midsize Cars,Regular,26300
+2023,Toyota,Camry AWD LE/SE,Automatic (S8),19236,25,34,29,208,Midsize Cars,Regular,24100
+2023,Toyota,Corolla,Automatic (AV-S10),20826,32,41,35,199,Compact Cars,Regular,29800
+2023,Toyota,Corolla,Automatic (AV-S10),22546,31,40,34,165,Compact Cars,Regular,32800
+2023,Toyota,Corolla Cross,Automatic (AV-S10),20891,31,33,32,218,Small Sport Utility Vehicle 2WD,Regular,24900
+2023,Toyota,Corolla Cross 4WD,Automatic (AV-S10),21425,29,32,30,224,Small Sport Utility Vehicle 4WD,Regular,34500
+2023,Toyota,Crown AWD,Automatic (AV-S6),19473,29,32,30,228,Midsize Cars,Regular,30800
+2023,Toyota,Crown AWD,Automatic (variable gear ratios),22721,42,41,41,175,Midsize Cars,Regular,28600
+2023,Toyota,GR Corolla,Manual 6-spd,19044,21,28,24,193,Subcompact Cars,Premium,29000
+2023,Toyota,GR 86,Automatic (S6),19320,21,31,25,227,Minicompact Cars,Premium,25700
+2023,Toyota,GR 86,Manual 6-spd,23097,20,27,22,184,Minicompact Cars,Premium,20200
+2023,Toyota,Highlander,Automatic (S8),23177,21,28,24,225,Small Sport Utility Vehicle 2WD,Regular,33200
+2023,Toyota,Highlander,Automatic (S8),21335,22,29,25,220,Small Sport Utility Vehicle 2WD,Regular,26100
+2023,Toyota,Highlander AWD,Automatic (S8),23776,21,28,24,246,Small Sport Utility Vehicle 4WD,Regular,23700
+2023,Toyota,Mirai LE,Automatic (variable gear ratios),22507,76,71,74,238,Compact Cars,Hydrogen,25600
+2023,Toyota,Mirai Limited,Automatic (variable gear ratios),21825,67,64,65,222,Compact Cars,Hydrogen,29200
+2023,Toyota,Prius,Automatic (variable gear ratios),19154,57,56,57,223,Midsize Cars,Regular,24800
+2023,Toyota,Prius AWD,Automatic (variable gear ratios),19039,53,54,54,213,Midsize Cars,Regular,25300
+2023,Toyota,RAV4,Automatic (S8),23243,27,35,30,247,Small Sport Utility Vehicle 2WD,Regular,32600
+2023,Toyota,RAV4,Automatic (S8),19542,27,34,30,253,Small Sport Utility Vehicle 2WD,Regular,23300
+2023,Toyota,RAV4 AWD,Automatic (S8),23546,25,33,28,196,Small Sport Utility Vehicle 4WD,Regular,22400
+2023,Toyota,RAV4 AWD,Automatic (S8),20257,27,33,29,161,Small Sport Utility Vehicle 4WD,Regular,26100
+2023,Toyota,Sequoia 2WD,Automatic (S10),19772,21,24,22,211,Standard Sport Utility Vehicle 2WD,Regular,30400
+2023,Toyota,Sequoia 4WD,Automatic (S10),19547,19,22,20,242,Standard Sport Utility Vehicle 4WD,Regular,25200
+2023,Toyota,Sienna 2WD,Automatic (AV-S6),22883,36,36,36,240,Minivan - 2WD,Regular,31200
+2023,Toyota,Sienna AWD,Automatic (AV-S6),19533,35,36,35,255,Minivan - 4WD,Regular,33500
+2023,Toyota,GR Supra,Automatic (S8),23421,23,31,26,235,Two Seaters,Premium,27900
+2023,Toyota,GR Supra,Automatic (S8),21406,25,31,27,208,Two Seaters,Premium,26900
+2023,Toyota,GR Supra,Manual 6-spd,21653,19,27,21,239,Two Seaters,Premium,28500
+2023,Toyota,Tacoma 2WD,Automatic (S6),22421,19,24,21,301,Small Pickup Trucks 2WD,Regular,40000
+2023,Toyota,Tacoma 2WD,Automatic (S6),23890,20,23,21,373,Small Pickup Trucks 2WD,Regular,36700
+2023,Toyota,Tacoma 4WD,Automatic (S6),20140,18,22,20,344,Small Pickup Trucks 4WD,Regular,33800
+2023,Toyota,Tacoma 4WD,Automatic (S6),22323,19,22,20,356,Small Pickup Trucks 4WD,Regular,26900
+2023,Toyota,Tacoma 4WD,Manual 6-spd,20692,17,21,18,356,Small Pickup Trucks 4WD,Regular,32300
+2023,Toyota,Tundra 2WD,Automatic (S10),21949,18,24,20,296,Standard Pickup Trucks 2WD,Regular,33500
+2023,Toyota,Tundra 2WD,Automatic (S10),22132,18,23,20,377,Standard Pickup Trucks 2WD,Regular,34100
+2023,Toyota,Tundra 2WD,Automatic (S10),19569,20,24,22,310,Standard Pickup Trucks 2WD,Regular,25800
+2023,Toyota,Tundra 4WD,Automatic (S10),23528,17,23,19,269,Standard Pickup Trucks 4WD,Regular,49900
+2023,Toyota,Tundra 4WD,Automatic (S10),20317,17,22,19,305,Standard Pickup Trucks 4WD,Regular,27900
+2023,Toyota,Tundra 4WD,Automatic (S10),20267,19,22,20,361,Standard Pickup Trucks 4WD,Regular,29200
+2023,Toyota,Venza AWD,Automatic (AV-S6),22101,40,37,39,224,Small Sport Utility Vehicle 4WD,Regular,25100
+2023,Toyota,bZ4X AWD,Automatic (A1),22688,114,94,104,137,Small Sport Utility Vehicle 4WD,Electricity,23400
+2024,Toyota,4Runner 2WD,Automatic (S5),11974,16,19,17,207,Standard Sport Utility Vehicle 2WD,Regular,34400
+2024,Toyota,4Runner 4WD,Automatic (S5),7316,16,19,17,235,Standard Sport Utility Vehicle 4WD,Regular,28300
+2024,Toyota,bZ4X,Automatic (A1),7262,131,107,119,159,Small Sport Utility Vehicle 2WD,Electricity,31300
+2024,Toyota,Camry,Automatic (S8),10796,22,33,26,190,Midsize Cars,Regular,31800
+2024,Toyota,Camry AWD LE/SE,Automatic (S8),11841,25,34,29,162,Midsize Cars,Regular,31100
+2024,Toyota,Corolla,Automatic (AV-S10),11387,32,41,35,243,Compact Cars,Regular,31800
+2024,Toyota,Corolla,Automatic (AV-S10),11662,31,40,34,251,Compact Cars,Regular,24100
+2024,Toyota,Corolla Cross,Automatic (AV-S10),7845,31,33,32,219,Small Sport Utility Vehicle 2WD,Regular,23300
+2024,Toyota,Corolla Cross AWD,Automatic (AV-S10),7541,29,31,30,202,Small Sport Utility Vehicle 4WD,Regular,32200
+2024,Toyota,Crown AWD,Automatic (AV-S6),11234,29,32,30,216,Midsize Cars,Regular,29100
+2024,Toyota,Crown AWD,Automatic (variable gear ratios),8267,42,41,41,226,Midsize Cars,Regular,21100
+2024,Toyota,GR Corolla,Manual 6-spd,11104,21,28,24,224,Subcompact Cars,Premium,26600
+2024,Toyota,GR 86,Automatic (S6),10164,21,30,24,191,Minicompact Cars,Premium,24400
+2024,Toyota,GR 86,Manual 6-spd,9004,20,26,22,193,Minicompact Cars,Premium,32400
+2024,Toyota,Grand Highlander AWD LE/XLE,Automatic (S8),8401,21,27,23,184,Standard Sport Utility Vehicle 4WD,Regular,33800
+2024,Toyota,Grand Highlander AWD Limited/Platinum,Automatic (S8),7628,20,26,22,183,Standard Sport Utility Vehicle 4WD,Regular,21100
+2024,Toyota,Land Cruiser,Automatic (S8),11777,22,25,23,221,Standard Sport Utility Vehicle 4WD,Premium,35300
+2024,Toyota,Mirai Limited,Automatic (variable gear ratios),11018,67,64,65,178,Compact Cars,Hydrogen,26200
+2024,Toyota,Mirai XLE,Automatic (variable gear ratios),10598,76,71,74,197,Compact Cars,Hydrogen,36800
+2024,Toyota,Prius,Automatic (variable gear ratios),10449,57,56,57,168,Midsize Cars,Regular,27200
+2024,Toyota,Prius AWD,Automatic (variable gear ratios),7010,53,54,54,222,Midsize Cars,Regular,21500
+2024,Toyota,RAV4,Automatic (S8),8113,27,35,30,254,Small Sport Utility Vehicle 2WD,Regular,25600
+2024,Toyota,RAV4 AWD,Automatic (S8),10398,27,33,29,212,Small Sport Utility Vehicle 4WD,Regular,35400
+2024,Toyota,RAV4 AWD,Automatic (S8),7141,25,33,28,233,Small Sport Utility Vehicle 4WD,Regular,23600
+2024,Toyota,Sequoia 2WD,Automatic (S10),9504,21,24,22,186,Standard Sport Utility Vehicle 2WD,Regular,34900
+2024,Toyota,Sequoia 4WD,Automatic (S10),9497,19,22,20,178,Standard Sport Utility Vehicle 4WD,Regular,30000
+2024,Toyota,Sienna 2WD,Automatic (AV-S6),9832,36,36,36,270,Minivan - 2WD,Regular,40900
+2024,Toyota,Sienna AWD,Automatic (AV-S6),11281,35,36,35,280,Minivan - 4WD,Regular,41900
+2024,Toyota,GR Supra,Automatic (S8),7329,25,31,27,237,Two Seaters,Premium,25500
+2024,Toyota,GR Supra,Automatic (S8),11931,23,31,26,252,Two Seaters,Premium,27700
+2024,Toyota,GR Supra,Manual 6-spd,11129,19,27,21,170,Two Seaters,Premium,34800
+2024,Toyota,Tacoma 2WD,Automatic (S8),10852,20,26,23,383,Small Pickup Trucks 2WD,Regular,49300
+2024,Toyota,Tacoma 4WD,Automatic (S8),10604,19,24,21,298,Small Pickup Trucks 4WD,Regular,37200
+2024,Toyota,Tundra 2WD,Automatic (S10),11341,18,23,20,302,Standard Pickup Trucks 2WD,Regular,41900
+2024,Toyota,Tundra 2WD,Automatic (S10),11911,20,24,22,346,Standard Pickup Trucks 2WD,Regular,29500
+2024,Toyota,Tundra 2WD,Automatic (S10),8612,18,23,20,281,Standard Pickup Trucks 2WD,Premium,40100
+2024,Toyota,Tundra 2WD,Automatic (S10),7154,20,24,22,313,Standard Pickup Trucks 2WD,Premium,34300
+2024,Toyota,Tundra 4WD,Automatic (S10),11391,17,23,19,349,Standard Pickup Trucks 4WD,Regular,38700
+2024,Toyota,Tundra 4WD,Automatic (S10),10518,17,22,19,290,Standard Pickup Trucks 4WD,Regular,32600
+2024,Toyota,Tundra 4WD,Automatic (S10),9469,19,22,20,367,Standard Pickup Trucks 4WD,Regular,40100
+2024,Toyota,Tundra 4WD,Automatic (S10),7363,17,23,19,324,Standard Pickup Trucks 4WD,Premium,53800
+2024,Toyota,Tundra 4WD,Automatic (S10),8529,19,22,20,309,Standard Pickup Trucks 4WD,Premium,41400
+2024,Toyota,Venza AWD,Automatic (AV-S6),8170,40,37,39,181,Small Sport Utility Vehicle 4WD,Regular,26600
+2024,Toyota,bZ4X AWD,Automatic (A1),9095,114,94,104,161,Small Sport Utility Vehicle 4WD,Electricity,24500
+2025,Toyota,4Runner 2WD,Automatic (S8),0,20,26,22,191,Standard Sport Utility Vehicle 2WD,Regular,40300
+2025,Toyota,4Runner 2WD,Automatic (S8),0,20,24,22,237,Standard Sport Utility Vehicle 2WD,Regular,40000
+2025,Toyota,4Runner 4WD,Automatic (S8),0,19,25,21,183,Standard Sport Utility Vehicle 4WD,Regular,44800
+2025,Toyota,4Runner 4WD,Automatic (S8),0,20,24,21,185,Standard Sport Utility Vehicle 4WD,Regular,31900
+2025,Toyota,4Runner 4WD,Automatic (S8),0,23,24,23,201,Standard Sport Utility Vehicle 4WD,Regular,25800
+2025,Toyota,bZ4X,Automatic (A1),0,131,107,119,202,Small Sport Utility Vehicle 2WD,Electricity,33600
+2025,Toyota,Camry HEV AWD LE,Automatic (AV-S6),0,51,49,50,184,Midsize Cars,Regular,27600
+2025,Toyota,Camry HEV AWD SE/XLE,Automatic (AV-S6),0,46,46,46,239,Midsize Cars,Regular,38000
+2025,Toyota,Corolla,Automatic (AV-S10),0,31,38,34,177,Compact Cars,Regular,37500
+2025,Toyota,Corolla,Automatic (variable gear ratios),0,32,41,35,208,Compact Cars,Regular,41700
+2025,Toyota,Corolla,Automatic (variable gear ratios),0,31,40,34,214,Compact Cars,Regular,39800
+2025,Toyota,Corolla Cross,Automatic (AV-S10),0,31,33,32,233,Small Sport Utility Vehicle 2WD,Regular,39100
+2025,Toyota,Corolla Cross AWD,Automatic (AV-S10),0,29,31,30,243,Small Sport Utility Vehicle 4WD,Regular,32000
+2025,Toyota,Crown AWD,Automatic (AV-S6),0,29,32,30,229,Midsize Cars,Regular,37500
+2025,Toyota,Crown AWD,Automatic (variable gear ratios),0,42,41,41,226,Midsize Cars,Regular,29900
+2025,Toyota,Crown Signia AWD,Automatic (AV-S6),0,39,37,38,202,Small Station Wagons,Regular,37800
+2025,Toyota,GR Corolla,Automatic (S8),0,19,27,22,191,Subcompact Cars,Premium,35800
+2025,Toyota,GR Corolla,Manual 6-spd,0,21,28,24,210,Subcompact Cars,Premium,42700
+2025,Toyota,GR 86,Automatic (S6),0,21,30,24,247,Minicompact Cars,Premium,37600
+2025,Toyota,GR 86,Manual 6-spd,0,20,26,22,212,Minicompact Cars,Premium,44000
+2025,Toyota,Grand Highlander AWD LE/XLE,Automatic (S8),0,21,27,23,201,Standard Sport Utility Vehicle 4WD,Regular,35200
+2025,Toyota,Grand Highlander AWD Limited/Platinum,Automatic (S8),0,20,26,22,266,Standard Sport Utility Vehicle 4WD,Regular,38000
+2025,Toyota,Land Cruiser,Automatic (S8),0,22,25,23,179,Standard Sport Utility Vehicle 4WD,Premium,27300
+2025,Toyota,Mirai XLE,Automatic (variable gear ratios),0,76,71,74,203,Compact Cars,Hydrogen,31600
+2025,Toyota,Prius,Automatic (variable gear ratios),0,57,56,57,204,Midsize Cars,Regular,26500
+2025,Toyota,Prius AWD,Automatic (variable gear ratios),0,53,54,54,228,Midsize Cars,Regular,35000
+2025,Toyota,RAV4,Automatic (S8),0,27,35,30,186,Small Sport Utility Vehicle 2WD,Regular,29800
+2025,Toyota,RAV4 AWD,Automatic (S8),0,27,33,29,224,Small Sport Utility Vehicle 4WD,Regular,44500
+2025,Toyota,RAV4 AWD,Automatic (S8),0,25,33,28,189,Small Sport Utility Vehicle 4WD,Regular,32700
+2025,Toyota,Sequoia 2WD,Automatic (S10),0,21,24,22,189,Standard Sport Utility Vehicle 2WD,Regular,35400
+2025,Toyota,Sequoia 4WD,Automatic (S10),0,19,22,20,175,Standard Sport Utility Vehicle 4WD,Regular,26400
+2025,Toyota,Sienna 2WD,Automatic (AV-S6),0,36,36,36,284,Minivan - 2WD,Regular,38300
+2025,Toyota,Sienna AWD,Automatic (AV-S6),0,34,36,35,281,Minivan - 4WD,Regular,41300
+2025,Toyota,GR Supra,Automatic (S8),0,25,31,27,165,Two Seaters,Premium,26400
+2025,Toyota,GR Supra,Automatic (S8),0,23,31,26,207,Two Seaters,Premium,34100
+2025,Toyota,GR Supra,Manual 6-spd,0,19,27,21,253,Two Seaters,Premium,31400
+2025,Toyota,Tacoma 2WD,Automatic (S8),0,20,26,23,300,Small Pickup Trucks 2WD,Regular,33000
+2025,Toyota,Tacoma 4WD,Automatic (S8),0,19,24,21,373,Small Pickup Trucks 4WD,Regular,44500
+2025,Toyota,Tundra 2WD,Automatic (S10),0,18,23,20,372,Standard Pickup Trucks 2WD,Regular,36400
+2025,Toyota,Tundra 2WD,Automatic (S10),0,20,24,22,381,Standard Pickup Trucks 2WD,Regular,59400
+2025,Toyota,Tundra 4WD,Automatic (S10),0,17,22,19,282,Standard Pickup Trucks 4WD,Regular,47600
+2025,Toyota,Tundra 4WD,Automatic (S10),0,19,22,20,343,Standard Pickup Trucks 4WD,Regular,40700
+2025,Toyota,bZ4X AWD (18inch Wheels),Automatic (A1),0,114,94,104,135,Small Sport Utility Vehicle 4WD,Electricity,30100

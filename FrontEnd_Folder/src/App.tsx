@@ -3,11 +3,12 @@ import { Navbar } from './components/Navbar';
 import { HomePage } from './components/HomePage';
 import { LeasingPage } from './components/LeasingPage';
 import { LoaningPage } from './components/LoaningPage';
+import { ComparePage } from './components/ComparePage';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'leasing' | 'loaning'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'leasing' | 'loaning' | 'compare'>('home');
 
-  const handleNavigate = (page: 'home' | 'leasing' | 'loaning') => {
+  const handleNavigate = (page: 'home' | 'leasing' | 'loaning' | 'compare') => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -54,6 +55,7 @@ export default function App() {
         {currentPage === 'home' && <HomePage />}
         {currentPage === 'leasing' && <LeasingPage />}
         {currentPage === 'loaning' && <LoaningPage />}
+        {currentPage === 'compare' && <ComparePage />}
       </div>
     </div>
   );

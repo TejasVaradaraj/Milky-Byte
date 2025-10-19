@@ -2,8 +2,8 @@ import { Star } from 'lucide-react';
 import { Button } from './ui/button';
 
 interface NavbarProps {
-  currentPage: 'home' | 'leasing' | 'loaning';
-  onNavigate: (page: 'home' | 'leasing' | 'loaning') => void;
+  currentPage: 'home' | 'leasing' | 'loaning' | 'compare';
+  onNavigate: (page: 'home' | 'leasing' | 'loaning' | 'compare') => void;
 }
 
 export function Navbar({ currentPage, onNavigate }: NavbarProps) {
@@ -56,6 +56,17 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
               }
             >
               Loaning
+            </Button>
+            <Button
+              variant={currentPage === 'compare' ? 'default' : 'ghost'}
+              onClick={() => onNavigate('compare')}
+              className={
+                currentPage === 'compare'
+                  ? 'bg-purple-600 hover:bg-purple-700 text-white'
+                  : 'text-purple-200 hover:text-white hover:bg-purple-800/50'
+              }
+            >
+              Compare
             </Button>
           </div>
         </div>

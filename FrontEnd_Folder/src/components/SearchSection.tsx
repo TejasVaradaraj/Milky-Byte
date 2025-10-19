@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Search, MapPin, ArrowUpDown, Gauge, Calendar, DollarSign } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -6,48 +6,36 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Label } from './ui/label';
 import { Badge } from './ui/badge';
 
+const BASE_URL = 'http://localhost:8000';
+
 interface Vehicle {
-  id: number;
-  model: string;
   year: number;
-  price: number;
+  make: string;
+  model: string;
+  trim: string;
+  mileage: number;
+  mpg_city: number;
+  mpg_hwy: number;
+  mpg_combined: number;
   horsepower: number;
-  mileage: 'low' | 'medium' | 'high';
-  city: string;
-  color: string;
+  body_type: string;
+  fuel_type: string;
+  price: number;
 }
 
-const mockVehicles: Vehicle[] = [
-  { id: 1, model: 'Camry', year: 2025, price: 28500, horsepower: 203, mileage: 'low', city: 'Houston', color: 'Silver' },
-  { id: 2, model: 'Camry', year: 2024, price: 26800, horsepower: 203, mileage: 'medium', city: 'Dallas', color: 'Blue' },
-  { id: 3, model: 'Corolla', year: 2025, price: 22500, horsepower: 169, mileage: 'low', city: 'Austin', color: 'White' },
-  { id: 4, model: 'Corolla', year: 2023, price: 20100, horsepower: 169, mileage: 'high', city: 'San Antonio', color: 'Red' },
-  { id: 5, model: 'RAV4', year: 2025, price: 32500, horsepower: 203, mileage: 'low', city: 'Houston', color: 'Black' },
-  { id: 6, model: 'RAV4', year: 2024, price: 30200, horsepower: 203, mileage: 'medium', city: 'Fort Worth', color: 'Gray' },
-  { id: 7, model: 'Highlander', year: 2025, price: 42500, horsepower: 295, mileage: 'low', city: 'Dallas', color: 'White' },
-  { id: 8, model: 'Highlander', year: 2023, price: 38900, horsepower: 295, mileage: 'medium', city: 'Austin', color: 'Blue' },
-  { id: 9, model: 'Tacoma', year: 2025, price: 35800, horsepower: 278, mileage: 'low', city: 'San Antonio', color: 'Green' },
-  { id: 10, model: 'Tacoma', year: 2024, price: 33500, horsepower: 278, mileage: 'medium', city: 'El Paso', color: 'Silver' },
-  { id: 11, model: 'Tundra', year: 2025, price: 48900, horsepower: 389, mileage: 'low', city: 'Houston', color: 'Black' },
-  { id: 12, model: 'Tundra', year: 2023, price: 44200, horsepower: 389, mileage: 'high', city: 'Dallas', color: 'Red' },
-  { id: 13, model: 'Prius', year: 2025, price: 28400, horsepower: 194, mileage: 'low', city: 'Austin', color: 'Blue' },
-  { id: 14, model: 'Prius', year: 2024, price: 26500, horsepower: 194, mileage: 'medium', city: 'Plano', color: 'White' },
-  { id: 15, model: '4Runner', year: 2025, price: 45600, horsepower: 270, mileage: 'low', city: 'Fort Worth', color: 'Gray' },
-  { id: 16, model: '4Runner', year: 2024, price: 42800, horsepower: 270, mileage: 'medium', city: 'Houston', color: 'Black' },
-  { id: 17, model: 'Camry', year: 2022, price: 24500, horsepower: 203, mileage: 'high', city: 'Arlington', color: 'Silver' },
-  { id: 18, model: 'Corolla', year: 2024, price: 21800, horsepower: 169, mileage: 'medium', city: 'Laredo', color: 'Blue' },
-  { id: 19, model: 'RAV4', year: 2023, price: 28900, horsepower: 203, mileage: 'high', city: 'Corpus Christi', color: 'Red' },
-  { id: 20, model: 'Highlander', year: 2024, price: 40500, horsepower: 295, mileage: 'low', city: 'El Paso', color: 'White' },
-];
-
-const getMileageValue = (mileage: 'low' | 'medium' | 'high'): number => {
-  const values = { low: 1, medium: 2, high: 3 };
-  return values[mileage];
+const getMileageCategory = (mileage: number): string => {
+  if (mileage < 30000) return 'Low (< 30k mi)';
+  if (mileage < 60000) return 'Medium (30k-60k mi)';
+  return 'High (> 60k mi)';
 };
 
-const getMileageDisplay = (mileage: 'low' | 'medium' | 'high'): string => {
-  const displays = { low: 'Low (0-30k mi)', medium: 'Medium (30-60k mi)', high: 'High (60k+ mi)' };
-  return displays[mileage];
+const getMileageRange = (category: string): [number, number] => {
+  switch(category) {
+    case 'low': return [0, 30000];
+    case 'medium': return [30000, 60000];
+    case 'high': return [60000, 300000];
+    default: return [0, 300000];
+  }
 };
 
 export function SearchSection() {
@@ -58,69 +46,68 @@ export function SearchSection() {
   const [year, setYear] = useState('');
   const [sortBy, setSortBy] = useState<'price' | 'year' | 'horsepower' | 'mileage'>('price');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
-  const [filteredResults, setFilteredResults] = useState<Vehicle[]>(mockVehicles);
+  const [filteredResults, setFilteredResults] = useState<Vehicle[]>([]);
   const [hasSearched, setHasSearched] = useState(false);
+  const [totalCount, setTotalCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSearch = () => {
-    let results = [...mockVehicles];
+  // Load initial data on mount
+  useEffect(() => {
+    handleSearch();
+  }, []);
 
-    // Apply filters
-    if (minPrice) {
-      results = results.filter(v => v.price >= parseFloat(minPrice));
-    }
-    if (maxPrice) {
-      results = results.filter(v => v.price <= parseFloat(maxPrice));
-    }
-    if (mileage) {
-      results = results.filter(v => v.mileage === mileage);
-    }
-    if (minHorsepower) {
-      results = results.filter(v => v.horsepower >= parseFloat(minHorsepower));
-    }
-    if (year) {
-      results = results.filter(v => v.year === parseInt(year));
-    }
-
-    // Apply sorting
-    results.sort((a, b) => {
-      let comparison = 0;
+  const handleSearch = async () => {
+    setIsLoading(true);
+    try {
+      // Build query parameters
+      const params = new URLSearchParams();
       
-      switch (sortBy) {
-        case 'price':
-          comparison = a.price - b.price;
-          break;
-        case 'year':
-          comparison = a.year - b.year;
-          break;
-        case 'horsepower':
-          comparison = a.horsepower - b.horsepower;
-          break;
-        case 'mileage':
-          comparison = getMileageValue(a.mileage) - getMileageValue(b.mileage);
-          break;
+      if (minPrice) params.append('price_min', minPrice);
+      if (maxPrice) params.append('price_max', maxPrice);
+      if (minHorsepower) params.append('hp_min', minHorsepower);
+      if (year && year !== 'all') params.append('year', year);
+      
+      // Handle mileage range
+      if (mileage && mileage !== 'all') {
+        const [mil_min, mil_max] = getMileageRange(mileage);
+        params.append('mil_min', mil_min.toString());
+        params.append('mil_max', mil_max.toString());
       }
       
-      return sortOrder === 'asc' ? comparison : -comparison;
-    });
+      params.append('sort_by', sortBy);
+      params.append('order', sortOrder);
+      params.append('limit', '50');
 
-    setFilteredResults(results);
-    setHasSearched(true);
+      const response = await fetch(`${BASE_URL}/filter?${params.toString()}`);
+      const data = await response.json();
+      
+      setFilteredResults(data.results);
+      setTotalCount(data.count);
+      setHasSearched(true);
+    } catch (error) {
+      console.error('Error fetching vehicles:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const toggleSortOrder = () => {
-    setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc');
-    if (hasSearched) {
-      const results = [...filteredResults].reverse();
-      setFilteredResults(results);
-    }
+    setSortOrder(prev => {
+      const newOrder = prev === 'asc' ? 'desc' : 'asc';
+      return newOrder;
+    });
   };
 
   const handleSortByChange = (value: 'price' | 'year' | 'horsepower' | 'mileage') => {
     setSortBy(value);
+  };
+
+  // Re-fetch when sort options change
+  useEffect(() => {
     if (hasSearched) {
       handleSearch();
     }
-  };
+  }, [sortBy, sortOrder]);
 
   return (
     <div id="search" className="bg-gradient-to-b from-indigo-900 via-purple-950 to-indigo-950 py-20 relative overflow-hidden">
@@ -211,11 +198,15 @@ export function SearchSection() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">Any year</SelectItem>
-                  <SelectItem value="2025">2025</SelectItem>
                   <SelectItem value="2024">2024</SelectItem>
                   <SelectItem value="2023">2023</SelectItem>
                   <SelectItem value="2022">2022</SelectItem>
                   <SelectItem value="2021">2021</SelectItem>
+                  <SelectItem value="2020">2020</SelectItem>
+                  <SelectItem value="2019">2019</SelectItem>
+                  <SelectItem value="2018">2018</SelectItem>
+                  <SelectItem value="2017">2017</SelectItem>
+                  <SelectItem value="2016">2016</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -234,7 +225,7 @@ export function SearchSection() {
         {hasSearched && (
           <div className="max-w-5xl mx-auto mb-6 flex flex-wrap items-center justify-between gap-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-purple-300/30">
             <div className="flex items-center gap-2 text-purple-200">
-              <span>Found {filteredResults.length} vehicle{filteredResults.length !== 1 ? 's' : ''}</span>
+              <span>Found {totalCount} vehicle{totalCount !== 1 ? 's' : ''} (showing {filteredResults.length})</span>
             </div>
             <div className="flex items-center gap-3">
               <Label className="text-purple-200">Sort by:</Label>
@@ -263,44 +254,55 @@ export function SearchSection() {
         )}
 
         {/* Results */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {filteredResults.map((vehicle) => (
-            <div key={vehicle.id} className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-purple-300/30 hover:scale-105 transition-transform cursor-pointer">
-              <div className="h-48 bg-gradient-to-br from-purple-800/50 to-blue-800/50 flex items-center justify-center text-6xl">
-                🚗
+        {isLoading ? (
+          <div className="flex justify-center items-center py-20">
+            <div className="text-purple-200 text-xl">Loading vehicles...</div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {filteredResults.map((vehicle, index) => (
+              <div key={`${vehicle.year}-${vehicle.model}-${index}`} className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-purple-300/30 hover:scale-105 transition-transform cursor-pointer">
+                <div className="h-48 bg-gradient-to-br from-purple-800/50 to-blue-800/50 flex items-center justify-center text-6xl">
+                  🚗
+                </div>
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="text-xl font-bold text-white">{vehicle.year} {vehicle.make}</h3>
+                    <Badge className="bg-purple-600/50 text-white border-purple-300/50">
+                      {vehicle.fuel_type}
+                    </Badge>
+                  </div>
+                  <p className="text-purple-200 mb-3 text-sm">{vehicle.model}</p>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-purple-300">Price:</span>
+                      <span className="text-white font-semibold">${vehicle.price.toLocaleString()}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-purple-300">Horsepower:</span>
+                      <span className="text-white">{vehicle.horsepower} HP</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-purple-300">Mileage:</span>
+                      <span className="text-white">{vehicle.mileage.toLocaleString()} mi</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-purple-300">MPG:</span>
+                      <span className="text-white">{vehicle.mpg_combined} combined</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-purple-300">Type:</span>
+                      <span className="text-white text-xs">{vehicle.body_type}</span>
+                    </div>
+                  </div>
+                  <Button variant="outline" className="w-full border-purple-300 text-purple-100 hover:bg-purple-800/50">
+                    View Details
+                  </Button>
+                </div>
               </div>
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-xl text-white">{vehicle.model} {vehicle.year}</h3>
-                  <Badge className="bg-purple-600/50 text-white border-purple-300/50">
-                    {vehicle.color}
-                  </Badge>
-                </div>
-                <div className="flex items-center text-purple-200 mb-3">
-                  <MapPin className="w-4 h-4 mr-1" />
-                  <span>{vehicle.city}, TX</span>
-                </div>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-purple-300">Price:</span>
-                    <span className="text-white">${vehicle.price.toLocaleString()}</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-purple-300">Horsepower:</span>
-                    <span className="text-white">{vehicle.horsepower} HP</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-purple-300">Mileage:</span>
-                    <span className="text-white capitalize">{getMileageDisplay(vehicle.mileage)}</span>
-                  </div>
-                </div>
-                <Button variant="outline" className="w-full border-purple-300 text-purple-100 hover:bg-purple-800/50">
-                  View Details
-                </Button>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         {hasSearched && filteredResults.length === 0 && (
           <div className="max-w-2xl mx-auto bg-white/10 backdrop-blur-md rounded-xl p-12 border border-purple-300/30 text-center">

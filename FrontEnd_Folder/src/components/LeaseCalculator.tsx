@@ -5,27 +5,35 @@ import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Label } from './ui/label';
 
+const BASE_URL = 'http://localhost:8000';
+
 export function LeaseCalculator() {
   const [vehiclePrice, setVehiclePrice] = useState('35000');
   const [downPayment, setDownPayment] = useState('3000');
   const [leaseTerm, setLeaseTerm] = useState('36');
-  const [residualValue, setResidualValue] = useState('55');
   const [creditScore, setCreditScore] = useState('700');
   const [monthlyPayment, setMonthlyPayment] = useState<number | null>(null);
+  const [aprPercent, setAprPercent] = useState<number | null>(null);
+  const [calculatedResidual, setCalculatedResidual] = useState<number | null>(null);
 
-  const calculateLease = () => {
-    const price = parseFloat(vehiclePrice);
-    const down = parseFloat(downPayment);
-    const term = parseFloat(leaseTerm);
-    const residual = parseFloat(residualValue) / 100;
-    const moneyFactor = 0.00125; // Example money factor (~3% APR)
+  const calculateLease = async () => {
+    try {
+      const price = parseFloat(vehiclePrice);
+      const down = parseFloat(downPayment);
+      const term = parseFloat(leaseTerm);
+      const credit = parseFloat(creditScore);
 
-    const residualAmount = price * residual;
-    const depreciation = (price - residualAmount) / term;
-    const financeCharge = (price + residualAmount) * moneyFactor;
-    const monthly = depreciation + financeCharge - (down / term);
+      const response = await fetch(
+        `${BASE_URL}/lease?price=${price}&credit_score=${credit}&months=${term}&downpayment=${down}`
+      );
+      const data = await response.json();
 
-    setMonthlyPayment(Math.max(0, monthly));
+      setMonthlyPayment(data.monthly_lease);
+      setAprPercent(data.apr_percent);
+      setCalculatedResidual(data.residual_value);
+    } catch (error) {
+      console.error('Error calculating lease:', error);
+    }
   };
 
   return (
@@ -71,16 +79,6 @@ export function LeaseCalculator() {
           />
         </div>
 
-        <div>
-          <Label htmlFor="residual" className="text-purple-200">Residual Value (%)</Label>
-          <Input
-            id="residual"
-            type="number"
-            value={residualValue}
-            onChange={(e) => setResidualValue(e.target.value)}
-            className="bg-white/20 border-purple-300/50 text-white"
-          />
-        </div>
 
         <div>
           <Label htmlFor="lease-credit-score" className="text-purple-200">Credit Score</Label>
@@ -106,6 +104,16 @@ export function LeaseCalculator() {
           <div className="mt-6 p-6 bg-gradient-to-r from-purple-600/30 to-blue-600/30 rounded-lg border border-purple-300/50">
             <div className="text-purple-200 mb-2">Estimated Monthly Payment</div>
             <div className="text-4xl">${monthlyPayment.toFixed(2)}</div>
+            {aprPercent !== null && (
+              <div className="text-sm text-purple-300 mt-3">
+                APR: {aprPercent.toFixed(2)}%
+              </div>
+            )}
+            {calculatedResidual !== null && (
+              <div className="text-sm text-purple-300 mt-1">
+                Residual Value: ${calculatedResidual.toFixed(2)}
+              </div>
+            )}
             <div className="text-sm text-purple-300 mt-2">
               * This is an estimate. Actual payments may vary.
             </div>

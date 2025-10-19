@@ -6,8 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Badge } from './ui/badge';
+import { config } from '../config';
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = config.apiUrl;
 
 interface LoanOption {
   program: string;

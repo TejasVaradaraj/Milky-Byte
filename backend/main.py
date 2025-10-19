@@ -34,6 +34,8 @@ origins = [
     "http://localhost:3001",
     "http://localhost:3002",
     "http://127.0.0.1:3002",
+    "https://*.vercel.app",  # Allow all Vercel preview deployments
+    "https://vercel.app",     # Allow Vercel production
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -41,6 +43,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    allow_origin_regex=r"https://.*\.vercel\.app",  # Support wildcard for Vercel
 )
 
 # Automotive image providers (no API call needed for Imagin URL; CarImagery is optional fallback)

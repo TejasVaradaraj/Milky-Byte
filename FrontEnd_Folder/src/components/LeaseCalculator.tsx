@@ -4,8 +4,9 @@ import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Label } from './ui/label';
+import { config } from '../config';
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = config.apiUrl;
 
 export function LeaseCalculator() {
   const [vehiclePrice, setVehiclePrice] = useState('35000');

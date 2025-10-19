@@ -21,6 +21,7 @@ interface Vehicle {
   body_type: string;
   fuel_type: string;
   price: number;
+  image?: string;
 }
 
 const getMileageCategory = (mileage: number): string => {
@@ -262,8 +263,20 @@ export function SearchSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {filteredResults.map((vehicle, index) => (
               <div key={`${vehicle.year}-${vehicle.model}-${index}`} className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-purple-300/30 hover:scale-105 transition-transform cursor-pointer">
-                <div className="h-48 bg-gradient-to-br from-purple-800/50 to-blue-800/50 flex items-center justify-center text-6xl">
-                  🚗
+                <div className="h-48 bg-gradient-to-br from-purple-800/50 to-blue-800/50 flex items-center justify-center overflow-hidden">
+                  {vehicle.image ? (
+                    <img 
+                      src={vehicle.image} 
+                      alt={`${vehicle.year} ${vehicle.make} ${vehicle.model}`}
+                      className="w-full h-full object-contain"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement!.innerHTML = '<div class="text-6xl">🚗</div>';
+                      }}
+                    />
+                  ) : (
+                    <div className="text-6xl">🚗</div>
+                  )}
                 </div>
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-2">

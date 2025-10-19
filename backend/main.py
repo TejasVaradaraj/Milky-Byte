@@ -6,12 +6,19 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import re, requests
+import os, smtplib
+from email.message import EmailMessage
+from urllib.parse import quote
 
 # =========================
 # CONFIG / DATA LOAD
 # =========================
 DF_PATH = "cars_priced.csv"
 df = pd.read_csv(DF_PATH)
+
+# After df is loaded and columns normalized
+df = df.reset_index(drop=True).copy()
+df["id"] = df.index.astype(int)
 
 app = FastAPI(title="Toyota Finance API")
 
@@ -135,6 +142,31 @@ def apr_from_credit(credit_score: int) -> float:
     if credit_score >= 660: return 6.0
     if credit_score >= 620: return 8.0
     return 10.5
+
+def finance_snapshot(price: float, credit_score: int = 720, months: int = 60, downpayment: float = 0.0):
+    apr = apr_from_credit(credit_score)
+    monthly = monthly_payment(price, apr, months, downpayment)
+    return {
+        "apr_percent": round(apr, 2),
+        "months": months,
+        "downpayment": round(downpayment, 2),
+        "monthly_payment": monthly,
+        "total_paid": round(monthly * months + downpayment, 2),
+    }
+
+def compose_email_body(car: dict, finance: dict) -> str:
+    lines = [
+        f"Your Toyota pick: {car.get('year')} {car.get('model')} (${int(car.get('price',0)):,})",
+        f"MPG (combined): {car.get('mpg_combined')}   HP: {car.get('horsepower')}   Mileage: {car.get('mileage')}",
+        f"APR: {finance['apr_percent']}%   Months: {finance['months']}   Down: ${finance['downpayment']:,}",
+        f"Estimated monthly payment: ${finance['monthly_payment']:,}",
+        f"Total paid (loan): ${finance['total_paid']:,}",
+        f"Image: {car.get('image')}",
+        "",
+        "— Sent via Celestial Toyota Selector ⚝"
+    ]
+    return "\n".join(lines)
+
 
 # =========================
 # ROUTES
@@ -305,6 +337,103 @@ def demo_examples():
     apr = calculate_apr(credit_score=sample_credit, price=sample_price)
     return {"sample_price": sample_price, "lease": lease, "loan": loan, "apr": apr}
 
+@app.get("/car/{car_id}")
+def get_car(car_id: int):
+    row = df[df["id"] == car_id]
+    if row.empty:
+        return {"error": "not found"}
+    rec = row.iloc[0].to_dict()
+    rec = attach_image(rec)
+    return rec
+
+@app.get("/compare")
+def compare(
+    id1: int,
+    id2: int,
+    credit_score: int = 720,
+    months: int = 60,
+    downpayment: float = 0.0
+):
+    # fetch rows
+    a = df[df["id"] == id1]
+    b = df[df["id"] == id2]
+    if a.empty or b.empty:
+        return {"error": "one_or_both_not_found", "ids": [id1, id2]}
+
+    a = attach_image(a.iloc[0].to_dict())
+    b = attach_image(b.iloc[0].to_dict())
+
+    # finance
+    a_fin = finance_snapshot(float(a.get("price", 30000) or 30000), credit_score, months, downpayment)
+    b_fin = finance_snapshot(float(b.get("price", 30000) or 30000), credit_score, months, downpayment)
+
+    # quick diffs (positive means A > B)
+    def diff(key): 
+        try:
+            return round((float(a.get(key) or 0) - float(b.get(key) or 0)), 2)
+        except Exception:
+            return None
+
+    diffs = {
+        "price_diff": diff("price"),
+        "mpg_combined_diff": diff("mpg_combined"),
+        "horsepower_diff": diff("horsepower"),
+        "mileage_diff": diff("mileage"),
+        "year_diff": diff("year"),
+        "monthly_payment_diff": round(a_fin["monthly_payment"] - b_fin["monthly_payment"], 2),
+    }
+
+    return {
+        "inputs": {"credit_score": credit_score, "months": months, "downpayment": downpayment},
+        "carA": a, "financeA": a_fin,
+        "carB": b, "financeB": b_fin,
+        "diffs": diffs
+    }
+
+@app.post("/share_email")
+def share_email(
+    to_email: str,
+    car_id: int,
+    credit_score: int = 720,
+    months: int = 60,
+    downpayment: float = 0.0
+):
+    row = df[df["id"] == car_id]
+    if row.empty:
+        return {"ok": False, "error": "car_not_found"}
+
+    car = attach_image(row.iloc[0].to_dict())
+    finance = finance_snapshot(float(car.get("price", 30000) or 30000), credit_score, months, downpayment)
+    body = compose_email_body(car, finance)
+    subject = f"Your {car.get('year')} {car.get('model')} quote"
+
+    # Try SMTP if env vars provided
+    host = os.getenv("SMTP_HOST")
+    port = int(os.getenv("SMTP_PORT", "587"))
+    user = os.getenv("SMTP_USER")
+    pwd  = os.getenv("SMTP_PASS")
+    from_addr = os.getenv("FROM_EMAIL", user or "no-reply@example.com")
+
+    if host and user and pwd:
+        try:
+            msg = EmailMessage()
+            msg["From"] = from_addr
+            msg["To"] = to_email
+            msg["Subject"] = subject
+            msg.set_content(body)
+            with smtplib.SMTP(host, port, timeout=15) as s:
+                s.starttls()
+                s.login(user, pwd)
+                s.send_message(msg)
+            return {"ok": True, "sent_via": "smtp"}
+        except Exception as e:
+            # fall through to mailto if SMTP fails
+            pass
+
+    # Fallback: return mailto link for the frontend to open
+    mailto = f"mailto:{to_email}?subject={quote(subject)}&body={quote(body)}"
+    return {"ok": True, "sent_via": "mailto", "mailto": mailto, "preview": {"subject": subject, "body": body}}
+
 # Image endpoints
 @app.get("/image")
 def get_image_url(make: str, model: str, year: int, angle: int = 23):
@@ -345,6 +474,7 @@ def get_image_url_with_fallback(make: str, model: str, year: int, angle: int = 2
     _image_cache[key] = primary_url
     return {"url": primary_url, "source": "imagin"}
 
-
-
+@app.get("/__routes")
+def __routes():
+    return [r.path for r in app.routes]
 

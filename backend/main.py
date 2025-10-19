@@ -10,6 +10,10 @@ import os, smtplib
 from email.message import EmailMessage
 from urllib.parse import quote
 
+from dotenv import load_dotenv
+load_dotenv()  # loads .env into process env
+
+
 # =========================
 # CONFIG / DATA LOAD
 # =========================

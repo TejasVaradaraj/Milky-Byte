@@ -9,12 +9,15 @@ const BASE_URL = "http://127.0.0.1:8000"; // change to deployed API if needed
 // 📘 INTERFACES
 // ========================
 interface Car {
+  id: number;
   year: number;
+  make?: string;
   model: string;
   price: number;
   mpg_combined: number;
   mileage?: number;
   horsepower?: number;
+  image?: string;
 }
 
 interface LoanInfo {
@@ -35,11 +38,15 @@ const App: React.FC = () => {
   const [leaseInfo, setLeaseInfo] = useState<any | null>(null);
   const [aprInfo, setAprInfo] = useState<any | null>(null);
 
-  // Load sorted cars
+  // Compare state
+  const [compareIds, setCompareIds] = useState<number[]>([]);
+  const [comparePack, setComparePack] = useState<any>(null);
+
+  // Load sorted cars (backend returns {count, results, ...})
   useEffect(() => {
-    fetch(`${BASE_URL}/cars?sort_by=${sortBy}&order=asc`)
+    fetch(`${BASE_URL}/cars?sort_by=${sortBy}&order=asc&limit=50&offset=0`)
       .then((r) => r.json())
-      .then(setCars)
+      .then((data) => setCars(data.results || data)) // supports both shapes
       .catch(console.error);
   }, [sortBy]);
 
@@ -83,6 +90,54 @@ const App: React.FC = () => {
   };
 
   // ========================
+  // 🔁 Compare 2 cars
+  // ========================
+  const toggleCompare = (id: number) => {
+    setCompareIds((prev) => {
+      const has = prev.includes(id);
+      if (has) return prev.filter((x) => x !== id);
+      if (prev.length >= 2) return [prev[1], id]; // keep last + new
+      return [...prev, id];
+    });
+  };
+
+  const runCompare = async () => {
+    if (compareIds.length !== 2) return;
+    const qs = new URLSearchParams({
+      id1: String(compareIds[0]),
+      id2: String(compareIds[1]),
+      credit_score: String(creditScore),
+      months: "60",
+      downpayment: "0",
+    });
+    const r = await fetch(`${BASE_URL}/compare?${qs.toString()}`);
+    const data = await r.json();
+    setComparePack(data);
+  };
+
+  // ========================
+  // ✉️ Email quote
+  // ========================
+  const emailMe = async (carId: number, toEmail: string) => {
+    const qs = new URLSearchParams({
+      to_email: toEmail,
+      car_id: String(carId),
+      credit_score: String(creditScore),
+      months: "60",
+      downpayment: "0",
+    });
+    const r = await fetch(`${BASE_URL}/share_email?${qs.toString()}`, { method: "POST" });
+    const data = await r.json();
+    if (data.sent_via === "mailto" && data.mailto) {
+      window.location.href = data.mailto; // opens user's email client
+    } else if (data.ok) {
+      alert("Email sent!");
+    } else {
+      alert("Could not send email.");
+    }
+  };
+
+  // ========================
   // 🖼️ UI RENDER
   // ========================
   return (
@@ -92,46 +147,73 @@ const App: React.FC = () => {
     >
       <h1 className="text-3xl font-bold mb-4">🚗 Celestial Toyota Selector</h1>
 
-      <label className="block mb-4">
-        Sort by:&nbsp;
-        <select
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value)}
-          className="text-black"
-        >
-          <option value="price">Price</option>
-          <option value="mpg_combined">MPG</option>
-          <option value="mileage">Mileage</option>
-          <option value="year">Year</option>
-          <option value="horsepower">Horsepower</option>
-        </select>
-      </label>
+      <div className="flex flex-wrap items-end gap-4 mb-6">
+        <label>
+          Sort by:&nbsp;
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            className="text-black"
+          >
+            <option value="price">Price</option>
+            <option value="mpg_combined">MPG</option>
+            <option value="mileage">Mileage</option>
+            <option value="year">Year</option>
+            <option value="horsepower">Horsepower</option>
+          </select>
+        </label>
 
-      <div className="mb-4">
-        <label>Credit Score: </label>
-        <input
-          type="number"
-          value={creditScore}
-          onChange={(e) => setCreditScore(Number(e.target.value))}
-          className="text-black"
-        />
+        <label>
+          Credit Score:&nbsp;
+          <input
+            type="number"
+            value={creditScore}
+            onChange={(e) => setCreditScore(Number(e.target.value))}
+            className="text-black w-28"
+          />
+        </label>
+
+        {/* Compare controls */}
+        <div className="flex items-center gap-2">
+          <span className="opacity-80">Compare (pick 2): {compareIds.join(" & ") || "—"}</span>
+          <button
+            onClick={runCompare}
+            disabled={compareIds.length !== 2}
+            className={`px-3 py-1 rounded ${compareIds.length === 2 ? "bg-yellow-500 text-black" : "bg-gray-600"}`}
+          >
+            Compare Now
+          </button>
+        </div>
       </div>
 
       {/* CAR GRID */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {cars.map((car, idx) => (
+        {cars.map((car) => (
           <div
-            key={idx}
+            key={car.id ?? `${car.model}-${car.year}-${car.price}`}
             className="p-4 rounded-lg bg-[#15172B] border border-gray-700"
           >
-            <h3 className="text-xl font-semibold">
+            {/* Image (provided by backend) */}
+            {car.image && (
+              <img
+                src={car.image}
+                alt={`${car.year} ${car.model}`}
+                style={{ width: "100%", height: 160, objectFit: "cover", borderRadius: 8, background: "#111" }}
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src =
+                    `${BASE_URL}/image?make=Toyota&model=${encodeURIComponent(car.model)}&year=${car.year}&angle=29`;
+                }}
+              />
+            )}
+
+            <h3 className="text-xl font-semibold mt-2">
               {car.year} {car.model}
             </h3>
             <p>💵 ${car.price?.toLocaleString()}</p>
             <p>⚙️ {car.horsepower ? `${car.horsepower} HP` : "—"}</p>
             <p>⛽ MPG: {car.mpg_combined}</p>
 
-            <div className="mt-2 space-x-2">
+            <div className="mt-2 flex flex-wrap gap-2">
               <button
                 onClick={() => handleLoan(car)}
                 className="bg-blue-500 px-3 py-1 rounded"
@@ -150,10 +232,57 @@ const App: React.FC = () => {
               >
                 APR
               </button>
+
+              {/* Compare toggle */}
+              {"id" in car && (
+                <button
+                  onClick={() => toggleCompare(car.id)}
+                  className={`px-3 py-1 rounded ${compareIds.includes(car.id) ? "bg-orange-500" : "bg-gray-600"}`}
+                >
+                  {compareIds.includes(car.id) ? "Selected" : "Compare"}
+                </button>
+              )}
+
+              {/* Email me */}
+              {"id" in car && (
+                <button
+                  className="bg-teal-500 px-3 py-1 rounded"
+                  onClick={() => {
+                    const em = prompt("Enter your email to receive this quote:");
+                    if (em) emailMe(car.id, em);
+                  }}
+                >
+                  Email Me This
+                </button>
+              )}
             </div>
           </div>
         ))}
       </div>
+
+      {/* COMPARE RESULT */}
+      {comparePack && !comparePack.error && (
+        <div className="mt-6 p-4 bg-[#15172B] rounded-lg border border-gray-700 overflow-x-auto">
+          <h2 className="text-2xl font-bold mb-3">Compare Result</h2>
+          <table className="w-full text-sm">
+            <thead>
+              <tr>
+                <th></th>
+                <th>{comparePack.carA.year} {comparePack.carA.model}</th>
+                <th>{comparePack.carB.year} {comparePack.carB.model}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Price</td><td>${comparePack.carA.price?.toLocaleString()}</td><td>${comparePack.carB.price?.toLocaleString()}</td></tr>
+              <tr><td>MPG (combined)</td><td>{comparePack.carA.mpg_combined}</td><td>{comparePack.carB.mpg_combined}</td></tr>
+              <tr><td>Horsepower</td><td>{comparePack.carA.horsepower ?? "—"}</td><td>{comparePack.carB.horsepower ?? "—"}</td></tr>
+              <tr><td>Mileage</td><td>{comparePack.carA.mileage ?? "—"}</td><td>{comparePack.carB.mileage ?? "—"}</td></tr>
+              <tr><td>Loan (60 mo)</td><td>${comparePack.financeA.monthly_payment}/mo</td><td>${comparePack.financeB.monthly_payment}/mo</td></tr>
+            </tbody>
+          </table>
+          <div className="mt-2 opacity-80">Payment Δ: ${comparePack.diffs.monthly_payment_diff}</div>
+        </div>
+      )}
 
       {/* RESULT PANELS */}
       <div className="mt-6 p-4 bg-[#15172B] rounded-lg">
